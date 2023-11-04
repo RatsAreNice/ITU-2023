@@ -38,9 +38,13 @@ function NajistUdalosti() {
                   <a href="/profile">
                       <button>Profil</button>
                   </a>
+                  <a href="/vytvorit">
+                    <button>Vytvotit udalost</button>
+                </a>
                   <p id="saved"></p>
               </div>
           </div>
+          <br/>
           <br/>
           <div className='Title'><h1>Najist Udalost</h1>
               <div className='Button'>

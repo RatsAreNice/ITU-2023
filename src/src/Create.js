@@ -4,7 +4,7 @@ import { useState} from "react";
 
 
 
-function Home() {
+function Create() {
 
     var [event, setEvent] = useState(null);
 
@@ -35,18 +35,18 @@ function Home() {
                 <a href="/najist">
                     <button>Najist Udalost</button>
                 </a>
+                <a href="/">
+                    <button>Moje Udalosti</button>
+                </a>
                 <a href="/profile">
                     <button>Profil</button>
-                </a>
-                <a href="/vytvorit">
-                    <button>Vytvotit udalost</button>
                 </a>
                 <p id="saved"></p>
             </div>
         </div>
         <br/>
         <br/>
-        <div className='Title'><h1>Moje udalosti</h1>
+        <div className='Title'><h1>Vytvorit</h1>
             <div className='Button'>
                 <button onClick={handleClick}>Načítať udalosť</button> 
                 { printdata() }
@@ -56,4 +56,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default Create;
