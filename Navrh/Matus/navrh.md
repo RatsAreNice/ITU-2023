@@ -8,9 +8,28 @@ ktoré sa nemenia, a tie, ktoré sa menia, by mali byť aktualizované automatic
 ### 2. ZHODLI SME SA NA NAVRHU OLIVERA
 
 ### 3. Analýza uživatelských potrieb
-Od aplikácie sa očakáva že uživatel bude vidieť zoznam akcií zoradených chronologicky. Uživatel vie založiť akciu, zobraziť akciu, uživatel vidí kedy a kde sa akcia koná, vidí k nej nejaký obecný popis, vidí k nej fórum. 
-Akcie po ich skončení by mali byť zmazané. Treba zobrazovať aktuálne info o počte zúčastnených. 
-// TODO - PREROZDELIT MEDZI DOTAZOVANYCH LUDI (RONKO A MAREK)
+- Dotazník: 
+- Ako si predstavuješ stránku so zoznamom akcií?
+- (Po predstavení makety) Čo si myslíš že je kľúčové pri detaile a tvorbe akcie?
+- Nejaké iné nápady ktoré stránka potrebuje?
+
+- Samozrejme otázky su položené ľudským spôsobom a nie ako keby to bolo nejake korporátne interview.
+
+Marek:
+- Chronologicky zoradený zoznam akcií
+- Chce založiť akciu, zobraziť akciu, vidiet kedy a kde sa akcia koná, nastaviť obrázok k akcii, vidieť kto sa zúčastní, kontaktovať organizátora, nastaviť profilovku, posielať obrázky
+
+Ronko:
+- Chcel by vidieť akcie zoradené podla času, chcel by medzi nimi vyhladávať
+- Založenie akcie, zobrazenie akcie, vidieť a kontaktovať zúčastnených, chcel by mať možnosť zostať anonymný
+
+Zhrnutie a záver:
+- Zoznam akcií bude zoradený chronologicky a bude možné ho filtrovať podla času a mena akcie.
+- Pravdepodobne neumožníme pridávanie obrázkov k akciám, dokážem si predstaviť že tam niekto vloží porno a monitorovať sa mi to nechce.
+- Anonymitu dosahujeme +- tým, ako málo údajov ukladáme (iba meno).
+- Kontakty si uživatelia môžu vymienať vo fóru.
+- Profilový obrázok nieje nutný, môžeme poprípade tam nejaké dať na tvrdo dať a budú uživatelom náhodne priradené, podobne ako je to na google docs v zdielaných dokumentoch.
+- lokáciu uživatel bude môcť zadať, stačí ako reťazec. 
 
 ### 4. Analýza iných aplikácií riešiacich podobný problém
 Discord je populárny a často používaný komunikačný nástroj, ktorý je využívaný aj na tvorbu akcií. Akcie sú na tejto platforme buď riešené v podobe eventov, kde čas, info, a zúćastnení su pekne naformátované, alebo v podobe fóra, kde sa do titulku zmestí prehladne iba jedna informácia, a potom v podobe likov sa rieši zúčastnenie, zvyšné info je v texte. 
@@ -31,7 +50,7 @@ Nevýhody:
 - Matúš: Stránka na založenie profilu, návrh API, návrh databázy, spolupráca na Backende, 
 
 7. ### MAKETA
-8. ### MAZE.COM
+8. ### MAZE.COM https://t.maze.co/199679636
 9. ### ZHODLI SME SA REACT FE A PHP BE 
 
 10. ### nech nás boh chráni pri kostre aplikácie amen.
