@@ -8,15 +8,19 @@ function NajistUdalosti() {
 
     var [event, setEvent] = useState(null);
 
+    const makeAPICall = async () => {
+      try {
+        const response = await fetch('http://eva.fit.vutbr.cz/~xdobia15/', {mode:'cors'});
+        const data = await response.json();
+        setEvent(data);
+      }
+      catch (e) {
+        console.log(e)
+      }
+    }
+
   function handleClick(){
-    fetch('http://eva.fit.vutbr.cz/~xdobia15/')
-    .then(res => {
-      return res.json();
-    })
-    .then(data => {
-      console.log(data);
-      setEvent(data);
-    })
+    makeAPICall();
   }
   
 
