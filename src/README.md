@@ -1,4 +1,4 @@
-# Getting Started with Create React App
+# Pre spustenie aplikácie spustite príkaz 'npm install', ktorý doinštaluje potrebné moduly, a následne príkaz 'npm run start', ktorý spustí aplikáciu v prehliadači.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
