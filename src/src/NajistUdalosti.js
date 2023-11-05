@@ -43,7 +43,7 @@ function NajistUdalosti() {
                       <button>Profil</button>
                   </a>
                   <a href="/vytvorit">
-                    <button>Vytvotit udalost</button>
+                    <button>Vytvorit udalost</button>
                 </a>
                   <p id="saved"></p>
               </div>

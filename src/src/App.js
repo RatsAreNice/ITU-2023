@@ -3,7 +3,6 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Home from './Home'
 import NajistUdalosti from './NajistUdalosti';
 import Profile from './Profile';
-import Create from './Create';
 import VytvoritUdalost from './VytvoritUdalost';
 
 function App() {

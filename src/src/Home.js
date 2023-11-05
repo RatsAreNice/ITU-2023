@@ -1,9 +1,5 @@
 import './App.css';
 import { useState} from "react";
-import VytvoritUdalost from './VytvoritUdalost';
-
-
-
 
 function Home() {
 

@@ -1,5 +1,4 @@
 import './App.css';
-import { useState} from "react";
 
 //create input field component
 export function InputField(label,className) {
@@ -62,11 +61,11 @@ function VytvoritUdalost() {
                   <a href="/">
                       <button>Moje Udalosti</button>
                   </a>
-                  <a href="/profile">
-                      <button>Profil</button>
+                  <a href="/najist">
+                      <button>Najist udalost</button>
                   </a>
-                  <a href="/vytvorit">
-                    <button>Vytvorit udalost</button>
+                  <a href="/profile">
+                    <button>Profil</button>
                 </a>
                   <p id="saved"></p>
               </div>
