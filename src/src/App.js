@@ -4,6 +4,7 @@ import Home from './Home'
 import NajistUdalosti from './NajistUdalosti';
 import Profile from './Profile';
 import Create from './Create';
+import VytvoritUdalost from './VytvoritUdalost';
 
 function App() {
   
@@ -16,7 +17,7 @@ function App() {
             <Route exact path='/' element={< Home />}></Route>
             <Route exact path='/najist' element={< NajistUdalosti />}></Route>
             <Route exact path='/profile' element={< Profile />}></Route>
-            <Route exact path='/vytvorit' element={< Create />}></Route>
+            <Route exact path='/vytvorit' element={< VytvoritUdalost />}></Route>
           </Routes>
         </div>
       </div>

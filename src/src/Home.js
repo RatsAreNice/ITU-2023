@@ -1,5 +1,6 @@
 import './App.css';
 import { useState} from "react";
+import VytvoritUdalost from './VytvoritUdalost';
 
 
 
@@ -43,7 +44,7 @@ function Home() {
                     <button>Profil</button>
                 </a>
                 <a href="/vytvorit">
-                    <button>Vytvotit udalost</button>
+                  <button>Vytvorit udalost</button>
                 </a>
                 <p id="saved"></p>
             </div>
