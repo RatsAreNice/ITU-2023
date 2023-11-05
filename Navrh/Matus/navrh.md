@@ -42,7 +42,7 @@ Nevýhody:
 - Discord nie je primárne určený na tvorbu akcií, ale na komunikáciu
 - Discord nemusí byť anonymný
 
-### 5.  ZHODA NA POTREBACH A KLUCOVYCH PROBLEMOCH
+
 
 ### 6. Delba práce
 - Oliver: Uvítacia stránka, stránka s info o špecifickej akcií, štylistická vízia
@@ -51,8 +51,23 @@ Nevýhody:
 
 7. ### MAKETA
 8. ### MAZE.COM https://t.maze.co/199679636
-9. ### ZHODLI SME SA REACT FE A PHP BE 
+### 7.  Zalozenie akcie
+- Uzivatel moze volne zvolit meno akcie, cas, miesto, a popis akcie
+- Kedze akcia ma meno, moze to byt podla neho zoradene, rovnako ako akcia ma datum, tak aj podla nej to moze byt zoradene
+- Pridávanie obrázkov pravdepodobne neumozníme.
+- Akcia ma popis, kam organizator moze vlozit svoj kontakt, co splnuje poziadavok o kontakt organizatora
+- okrem toho akcia ma taktiez aj lokaciu, ktoru si uzivatel moze zvolit, alebo nechat prazdnu
 
-10. ### nech nás boh chráni pri kostre aplikácie amen.
+### 8. Testovanie makety
+- Maze sam o sebe podporuje metriky ako je uspesnost, cas, pocet klikov a podobne.
+- bolo testovane: Zobrazenie detailu akcie (100% uspesnost), polozena otazka co by uzivatel chcel vidiet v tejto aplikacii (0 uzitocnych odpovedi :( ), nazor na dizajn od 1 - 10 (priemer 8.8)
+- zaujimavou castou bolo testovanie zalozenia akcie, kde ale miesto domovskej stranky sa uzivatel nachadzal v detaile akcii a jeho ulohou bolo zalozit akciu. Uzivatela nenapadlo kliknut vysednuty text "najst akciu", co bola hlavna stranka. 
+- v zivom kole testovania 2 uzivatelov na makete bola odhalena dalsia chyba, keby ma uzivatel zadat datum akcie, kde den akcie je jednociferne cislo, napriek tomu ze je vedla vypisany format DD-MM-YYYY uzivatel si bol neisty ci ma napisat 7. alebo 07.
+- riesenie tychto nedostatkov je pridat domovsku stranku a odtial navigaciu do listu akcii, miesto toho aby list akcii bol domovskou strankou. Riesenim datumovej krizy je bud elaborovat na formate (miesta na stranke je dost), alebo pridat kalendar, popripade sipky, ktore by cyklovali dnami.
+
+
+1.  ### ZHODLI SME SA REACT FE A PHP BE 
+
+2.  ### nech nás boh chráni pri kostre aplikácie amen.
 
 
