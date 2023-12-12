@@ -31,7 +31,6 @@ function Profile() {
     return "";
   }
 
-
   return (
   <div className='Body'>
           <div class="buttons">
