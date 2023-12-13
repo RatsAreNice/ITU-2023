@@ -1,13 +1,10 @@
 import './App.css';
-import { useState} from "react";
-import Navbar from "./navbar";
 import useFetch from './useFetch';
 import { Link } from 'react-router-dom';
 
 
 function Home() {
-    var [event, setEvent] = useState(null);
-    const { data, isPending, Error} = useFetch('http://eva.fit.vutbr.cz/~xdobia15/')
+    const { data, isPending, Error} = useFetch('http://localhost:8000/udalost')
 
   return (
     <div className="home">
