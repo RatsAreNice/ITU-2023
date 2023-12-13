@@ -1,4 +1,5 @@
 import './App.css';
+import { Link } from "react-router-dom";
 
 //create input field component
 export function InputField(label,className) {
@@ -50,44 +51,22 @@ function VytvoritUdalost() {
     return <div><pre>{JSON.stringify(data, null, 2) }</pre></div>;
     
   }
-
-  
-  
   
   return (
   <div className='Body'>
-          <div class="buttons">
-              <div class="action_btn">
-                  <a href="/">
-                      <button>Moje Udalosti</button>
-                  </a>
-                  <a href="/najist">
-                      <button>Najist udalost</button>
-                  </a>
-                  <a href="/profile">
-                    <button>Profil</button>
-                </a>
-                  <p id="saved"></p>
-              </div>
+      <div className='Title'><h1>Vytvorit Udalost</h1>
+          <div className='Button'>
+                { InputField("Nazov udalosti: ","event_name") }
+                { InputField("Lokacia: ","location") }
+                { InputField("Datum zaciatku: ","StartDate") }
+                { InputField("Datum konca: ","EndDate") }
+                { InputField("Popis: ","description") }
+              <button onClick={handleClick}>submit</button> 
+              { printdata() }
+              
           </div>
-          <br/>
-          <br/>
-          <div className='Title'><h1>Vytvorit Udalost</h1>
-              <div className='Button'>
-                    { InputField("Nazov udalosti: ","event_name") }
-                    { InputField("Lokacia: ","location") }
-                    { InputField("Datum zaciatku: ","StartDate") }
-                    { InputField("Datum konca: ","EndDate") }
-                    { InputField("Popis: ","description") }
-                    
-                    
-                  <button onClick={handleClick}>submit</button> 
-                  { printdata() }
-                  
-              </div>
-          </div>
-          
       </div>
+  </div>
   );
 }
 

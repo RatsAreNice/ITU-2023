@@ -1,6 +1,6 @@
 import './App.css';
 import { useState} from "react";
-
+import { Link } from "react-router-dom";
 
 
 
@@ -32,26 +32,14 @@ function Profile() {
   }
 
   return (
-  <div className='Body'>
-          <div class="buttons">
-              <div class="action_btn">
-                  <a href="/">
-                      <button>Moje Udalosti</button>
-                  </a>
-                  <a href="/najist">
-                      <button>Najist Udalost</button>
-                  </a>
-                  <p id="saved"></p>
-              </div>
-          </div>
-          <br/>
-          <div className='Title'><h1>Profil</h1>
-              <div className='Button'>
-                  <button onClick={handleClick}>Načítať udalosť</button> 
-                  { printdata() }
-              </div>
-          </div>
-      </div>
+    <div className='Body'>
+        <div className='Title'><h1>Profil</h1>
+            <div className='Button'>
+                <button onClick={handleClick}>Načítať udalosť</button> 
+                { printdata() }
+            </div>
+        </div>
+    </div>
   );
 }
 

@@ -1,58 +1,32 @@
 import './App.css';
 import { useState} from "react";
+import Navbar from "./navbar";
+import useFetch from './useFetch';
+import { Link } from 'react-router-dom';
+
 
 function Home() {
-
     var [event, setEvent] = useState(null);
-
-    const makeAPICall = async () => {
-      try {
-        const response = await fetch('http://eva.fit.vutbr.cz/~xdobia15/', {mode:'cors'});
-        const data = await response.json();
-        setEvent(data);
-      }
-      catch (e) {
-        console.log(e)
-      }
-    }
-  
-  function handleClick(){
-    makeAPICall();
-  }
-  
-
-  function printdata(){
-    if(event != null){
-      return <div><pre>{JSON.stringify(event, null, 2) }</pre></div>;
-    }
-    return "";
-  }
-
+    const { data, isPending, Error} = useFetch('http://eva.fit.vutbr.cz/~xdobia15/')
 
   return (
-    <div className='Body'>
-        <div class="buttons">
-            <div class="action_btn">
-                <a href="/najist">
-                    <button>Najist Udalost</button>
-                </a>
-                <a href="/profile">
-                    <button>Profil</button>
-                </a>
-                <a href="/vytvorit">
-                  <button>Vytvorit udalost</button>
-                </a>
-                <p id="saved"></p>
-            </div>
-        </div>
-        <br/>
-        <br/>
-        <div className='Title'><h1>Moje udalosti</h1>
-            <div className='Button'>
-                <button onClick={handleClick}>Načítať udalosť</button> 
-                { printdata() }
-            </div>
-        </div>
+    <div className="home">
+      { Error && <div>{ Error }</div> }
+      { isPending && <div>Loading...</div> }
+      { data && 
+      //data.event_name
+      //<div><pre>{JSON.stringify(data, null, 2) }</pre></div> 
+      <div className="udalosti">
+        {data.map((event) => (
+          <div className="udalosti-preview" key={event.event_name} >
+            <Link to={`/udalost/${event.id}`}>
+            <h1>Udalost { event.event_name } </h1>
+            <h2>{ event.location }</h2>
+            </Link>
+          </div>
+        ))
+        }
+      </div>}
     </div>
   );
 }

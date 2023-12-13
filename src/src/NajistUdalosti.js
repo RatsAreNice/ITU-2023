@@ -1,6 +1,6 @@
 import './App.css';
 import { useState} from "react";
-
+import { Link } from "react-router-dom";
 
 
 
@@ -34,22 +34,6 @@ function NajistUdalosti() {
 
   return (
   <div className='Body'>
-          <div class="buttons">
-              <div class="action_btn">
-                  <a href="/">
-                      <button>Moje Udalosti</button>
-                  </a>
-                  <a href="/profile">
-                      <button>Profil</button>
-                  </a>
-                  <a href="/vytvorit">
-                    <button>Vytvorit udalost</button>
-                </a>
-                  <p id="saved"></p>
-              </div>
-          </div>
-          <br/>
-          <br/>
           <div className='Title'><h1>Najist Udalost</h1>
               <div className='Button'>
                   <button onClick={handleClick}>Načítať udalosť</button> 
