@@ -61,7 +61,7 @@ function App() {
               <Route exact path='/' element={< Home />}></Route>
               <Route exact path='/moje' element={< MojeUdalosti AuthUser={AuthUser} />}></Route>
               <Route exact path='/profile' element={< Login AuthUser={AuthUser} />}></Route>
-              <Route exact path='/vytvorit' element={< VytvoritUdalost />}></Route>
+              <Route exact path='/vytvorit' element={< VytvoritUdalost AuthUser={AuthUser} />}></Route>
               <Route path="/udalost/:id" element={< DetailUdalosti />}></Route>
               <Route exact path="/register" element={< SignUp />}></Route>
             </Routes>

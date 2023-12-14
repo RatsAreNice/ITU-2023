@@ -15,7 +15,7 @@ function Home() {
       //<div><pre>{JSON.stringify(data, null, 2) }</pre></div> 
       <div className="udalosti">
         {data.map((event) => (
-          <div className="udalosti-preview" key={event.event_name} >
+          <div className="udalosti-preview" key={event.id} >
             <Link to={`/udalost/${event.id}`}>
             <h1>Udalost { event.event_name } </h1>
             <h2>{ event.location }</h2>

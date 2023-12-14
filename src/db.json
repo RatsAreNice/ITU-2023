@@ -1,37 +1,100 @@
 {
-    "udalost": [
-        {
-            "id" : "1",
-            "event_name" : "chodbovica",
-            "location" : "ronnie",
-            "start_date" : "01-01-2023",
-            "end_date" : "01-01-2023",
-            "start_time" : "13-00",
-            "end_time" : "15-00",
-            "max_people" : "13",
-            "description" : "Popis udalosti chodbovica"
-        },
-        {
-            "id" : "2",
-            "event_name" : "futbal",
-            "location" : "listovky",
-            "start_date" : "01-01-2023",
-            "end_date" : "01-01-2023",
-            "start_time" : "13-00",
-            "end_time" : "15-00",
-            "max_people" : "13",
-            "description" : "Popis udalosti futbal"
-        },
-        {
-            "id" : "3",
-            "event_name" : "test",
-            "location" : "ldil",
-            "start_date" : "01-01-2023",
-            "end_date" : "01-01-2023",
-            "start_time" : "13-00",
-            "end_time" : "15-00",
-            "max_people" : "13",
-            "description" : "Popis udalosti test"
-        }
-    ] 
+  "udalost": [
+    {
+      "id": "1",
+      "event_name": "chodbovica",
+      "location": "ronnie",
+      "start_date": "01-01-2023",
+      "end_date": "01-01-2023",
+      "start_time": "13-00",
+      "end_time": "15-00",
+      "max_people": "13",
+      "description": "Popis udalosti chodbovica",
+      "creator": "ronniemcnutt@gmail.com"
+    },
+    {
+      "id": "2",
+      "event_name": "futbal",
+      "location": "listovky",
+      "start_date": "01-01-2023",
+      "end_date": "01-01-2023",
+      "start_time": "13-00",
+      "end_time": "15-00",
+      "max_people": "13",
+      "description": "Popis udalosti futbal",
+      "creator": "ronniemcnutt@gmail.com"
+    },
+    {
+      "id": "3",
+      "event_name": "test",
+      "location": "ldil",
+      "start_date": "01-01-2023",
+      "end_date": "01-01-2023",
+      "start_time": "13-00",
+      "end_time": "15-00",
+      "max_people": "13",
+      "description": "Popis udalosti test",
+      "creator": "olivernemcek7@gmail.com"
+    },
+    {
+      "event_name": "Party",
+      "description": "party na maneskach",
+      "location": "Manesky",
+      "max_people": "12",
+      "start_date": "2023-12-15",
+      "start_time": "15:00",
+      "end_date": "2023-12-15",
+      "end_time": "17:00",
+      "creator": "ronniemcnutt@gmail.com",
+      "id": "4vSQNOm"
+    },
+    {
+      "event_name": "Lolec",
+      "description": "lolec desc",
+      "location": "xddddd",
+      "max_people": "5",
+      "start_date": "2023-12-15",
+      "start_time": "10:00",
+      "end_date": "2023-12-17",
+      "end_time": "15:00",
+      "creator": "ronniemcnutt@gmail.com",
+      "id": "l6Y-VJ_"
+    },
+    {
+      "event_name": "Lolec",
+      "description": "lolec desc",
+      "location": "xddddd",
+      "max_people": "5",
+      "start_date": "2023-12-15",
+      "start_time": "10:00",
+      "end_date": "2023-12-17",
+      "end_time": "15:00",
+      "creator": "ronniemcnutt@gmail.com",
+      "id": "MvolCOx"
+    },
+    {
+      "event_name": "Redirect test",
+      "description": "sdadadadadada",
+      "location": "q",
+      "max_people": "1",
+      "start_date": "2023-12-15",
+      "start_time": "10:00",
+      "end_date": "2023-12-15",
+      "end_time": "03:00",
+      "creator": "ronniemcnutt@gmail.com",
+      "id": "mEt89OT"
+    },
+    {
+      "event_name": "dq",
+      "description": "wqeqeq",
+      "location": "sdadad",
+      "max_people": "5",
+      "start_date": "2023-01-10",
+      "start_time": "10:00",
+      "end_date": "2023-01-31",
+      "end_time": "00:00",
+      "creator": "ronniemcnutt@gmail.com",
+      "id": "ckOuezc"
+    }
+  ]
 }
