@@ -41,7 +41,7 @@ function App() {
               <Route exact path='/profile' element={< Profile />}></Route>
               <Route exact path='/vytvorit' element={< VytvoritUdalost />}></Route>
               <Route path="/udalost/:id" element={< DetailUdalosti />}></Route>
-              <Route exact path="/login" element={< SignIn />}></Route>
+              <Route exact path="/login" element={< Autorizacia />}></Route>
             </Routes>
       </div>
     </div>
