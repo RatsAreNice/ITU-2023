@@ -1,5 +1,4 @@
 import './App.css';
-import { Link } from "react-router-dom";
 
 //create input field component
 export function InputField(label,className) {

@@ -5,7 +5,7 @@ const Navbar = () => {
         <div className="buttons">
             <div className="action_btn">
                 <Link to="/">
-                    <button>Moje Udalosti</button>
+                    <button>Vsetky Udalosti</button>
                 </Link>
                 <Link to="/profile">
                     <button>Profil</button>
@@ -14,7 +14,7 @@ const Navbar = () => {
                 <button>Vytvorit udalost</button>
                 </Link>
                 <Link to="/najist">
-                        <button>Najist Udalost</button>
+                        <button>Moje Udalosti</button>
                 </Link>
                 <p id="saved"></p>
             </div>
@@ -23,5 +23,5 @@ const Navbar = () => {
         </div>
      );
 }
-
+ 
 export default Navbar;
