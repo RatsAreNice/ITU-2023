@@ -1,15 +1,17 @@
 import './App.css';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Home from './Home'
-import NajistUdalosti from './NajistUdalosti';
-import Profile from './Profile';
 import VytvoritUdalost from './VytvoritUdalost';
 import Navbar from './navbar';
 import DetailUdalosti from './DetailUdalosti';
-import Autorizacia from './Login';
-import SignIn from './components/auth/SignIn';
+import Login from './Login';
+import SignUp from './components/auth/SignUp';
 import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
+import MojeUdalosti from './MojeUdalosti';
+import AuthDetails from './components/auth/AuthDetails';
+import { useState, useEffect } from 'react';
+import { onAuthStateChanged } from "firebase/auth";
 
 function App() {
   // Your web app's Firebase configuration
@@ -29,7 +31,27 @@ function App() {
   // Initialize Firebase Authentication and get a reference to the service
   const auth = getAuth(app);
 
+  const [AuthUser, setAuthUser] = useState(null);
 
+  const ChangeUser = (newUser) => {
+    setAuthUser(newUser)
+  }
+
+  useEffect (() =>{
+    const listen = onAuthStateChanged(auth, (user) => {
+        if (user) {
+            ChangeUser(user)
+        } else{
+            ChangeUser(null);
+        }
+    })
+
+    return () => {
+        listen();
+    }
+  }, []);
+
+  //informacie o prihlasenom uzivatelovi su v AuthUser. ak je to null, uzivatel je odhlaseny. AuthUser.email vrati jeho email
   return (
     <Router>
     <div className="App">
@@ -37,11 +59,11 @@ function App() {
       <div className='Content'>
             <Routes>
               <Route exact path='/' element={< Home />}></Route>
-              <Route exact path='/najist' element={< NajistUdalosti />}></Route>
-              <Route exact path='/profile' element={< Profile />}></Route>
+              <Route exact path='/moje' element={< MojeUdalosti AuthUser={AuthUser} />}></Route>
+              <Route exact path='/profile' element={< Login AuthUser={AuthUser} />}></Route>
               <Route exact path='/vytvorit' element={< VytvoritUdalost />}></Route>
               <Route path="/udalost/:id" element={< DetailUdalosti />}></Route>
-              <Route exact path="/login" element={< Autorizacia />}></Route>
+              <Route exact path="/register" element={< SignUp />}></Route>
             </Routes>
       </div>
     </div>

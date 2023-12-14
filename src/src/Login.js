@@ -1,14 +1,14 @@
 import AuthDetails from "./components/auth/AuthDetails";
 import SignIn from "./components/auth/SignIn";
-import SignUp from "./components/auth/SignUp";
-const Autorizacia = () => {
+import { Link } from "react-router-dom";
+const Login = ( {AuthUser} ) => {
     return ( 
         <div>
             <SignIn />
-            <SignUp />
-            <AuthDetails />
+            <AuthDetails AuthUser={AuthUser} />
+            <div> Nemate ucet? Vytvorte si ho <Link to='/register'>Tu</Link> </div>
         </div> 
      );
 }
 
-export default Autorizacia;
+export default Login;

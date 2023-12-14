@@ -8,12 +8,12 @@ const Navbar = () => {
                     <button>Vsetky Udalosti</button>
                 </Link>
                 <Link to="/profile">
-                    <button>Profil</button>
+                    <button>Prihlasenie</button>
                 </Link>
                 <Link to="/vytvorit">
                 <button>Vytvorit udalost</button>
                 </Link>
-                <Link to="/najist">
+                <Link to="/moje">
                         <button>Moje Udalosti</button>
                 </Link>
                 <p id="saved"></p>
