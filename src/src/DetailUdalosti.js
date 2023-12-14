@@ -1,9 +1,20 @@
 import { useParams } from "react-router-dom";
 import useFetch from "./useFetch";
+import { useNavigate } from 'react-router-dom'
+import { Link } from "react-router-dom";
 
-const DetailUdalosti = () => {
+const DetailUdalosti = ( {AuthUser} ) => {
     const { id } = useParams()
     const { data, isPending, Error} = useFetch('http://localhost:8000/udalost/' + id)
+    const navigate = useNavigate();
+
+    const handleClick = () => {
+        fetch('http://localhost:8000/udalost/' + id, {
+            method: "DELETE"
+        }).then(() => {
+            navigate('/')
+        }) 
+    }
 
     return (
         <div className="home">
@@ -17,8 +28,9 @@ const DetailUdalosti = () => {
             <p>Koniec : { data.end_date } o { data.end_time }</p>
             <p>Kapacita : { data.max_people } </p>
             <p>Popis : { data.description } </p>
+            { AuthUser.email === data.creator ? (<div><button onClick={handleClick}>Odstranit udalost</button>
+            <Link to={`/udalost/${id}/upravit`}><button>Upravit udalost</button></Link></div>) : <></>}
         </div> 
-        
         }
       </div>
     );

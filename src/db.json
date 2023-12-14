@@ -25,18 +25,6 @@
       "creator": "ronniemcnutt@gmail.com"
     },
     {
-      "id": "3",
-      "event_name": "test",
-      "location": "ldil",
-      "start_date": "01-01-2023",
-      "end_date": "01-01-2023",
-      "start_time": "13-00",
-      "end_time": "15-00",
-      "max_people": "13",
-      "description": "Popis udalosti test",
-      "creator": "olivernemcek7@gmail.com"
-    },
-    {
       "event_name": "Party",
       "description": "party na maneskach",
       "location": "Manesky",
@@ -95,6 +83,18 @@
       "end_time": "00:00",
       "creator": "ronniemcnutt@gmail.com",
       "id": "ckOuezc"
+    },
+    {
+      "event_name": "Femboy party 2",
+      "description": "femboy party na maneskach",
+      "location": "Manesky",
+      "max_people": "17",
+      "start_date": "2023-12-16",
+      "start_time": "17:00",
+      "end_date": "2023-12-16",
+      "end_time": "20:00",
+      "creator": "olivernemcek7@gmail.com",
+      "id": "wWqNC9u"
     }
   ]
 }
