@@ -10,6 +10,21 @@ const DetailUdalosti = ( {AuthUser} ) => {
     const navigate = useNavigate();
 
     const handleClick = () => {
+        //vymazanie prispevkov k danej udalosti
+        fetch('http://localhost:8000/udalost/' + id + '?_embed=prispevok')
+        .then(res => {
+        if (!res.ok) { // error coming back from server
+          throw Error('could not fetch the data for that resource');
+        } 
+        return res.json();
+      })
+      .then(data => {
+        data.prispevok.map((prisp) => (
+            fetch('http://localhost:8000/prispevok/' + prisp.id, {method: "DELETE"})
+        ));
+      })
+        //
+
         fetch('http://localhost:8000/udalost/' + id, {
             method: "DELETE"
         }).then(() => {

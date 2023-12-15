@@ -1,84 +1,72 @@
 {
   "udalost": [
     {
-      "id": "2",
-      "event_name": "futbal",
-      "location": "listovky",
-      "start_date": "01-01-2023",
-      "end_date": "01-01-2023",
-      "start_time": "13-00",
-      "end_time": "15-00",
-      "max_people": "13",
-      "description": "Popis udalosti futbal",
-      "creator": "ronniemcnutt@gmail.com"
+      "event_name": "fgbf",
+      "description": "sadaad",
+      "location": "qqqq",
+      "max_people": "123",
+      "start_date": "2023-12-16",
+      "start_time": "00:00",
+      "end_date": "2023-12-16",
+      "end_time": "00:00",
+      "creator": "ronniemcnutt@gmail.com",
+      "id": "1"
+    },
+    {
+      "event_name": "qqqqqqqqqqq",
+      "description": "d",
+      "location": "d",
+      "max_people": "12",
+      "start_date": "2023-12-15",
+      "start_time": "00:00",
+      "end_date": "2023-12-15",
+      "end_time": "00:00",
+      "creator": "ronniemcnutt@gmail.com",
+      "id": "5WxP857"
     }
   ],
   "prispevok": [
     {
-      "id": "1",
+      "udalostId": "6xZ0q9W",
+      "user": "olivernemcek7@gmail.com",
+      "text": "kolkatka",
+      "id": "dwPJ--r"
+    },
+    {
+      "udalostId": "Ag-AcZi",
+      "user": "olivernemcek7@gmail.com",
+      "text": "kolko ludi dojde",
+      "id": "YnrDFWs"
+    },
+    {
+      "udalostId": "Ag-AcZi",
+      "user": "olivernemcek7@gmail.com",
+      "text": "ktest",
+      "id": "-ThFDYE"
+    },
+    {
+      "udalostId": "Ag-AcZi",
+      "user": "olivernemcek7@gmail.com",
+      "text": "abcd",
+      "id": "jQe0eFy"
+    },
+    {
       "udalostId": "1",
-      "user": "ronnie",
-      "text": "prispevok cislo jedna"
-    },
-    {
-      "id": "2",
-      "udalostId": "1",
-      "user": "ronnie",
-      "text": "prispevok cislo dva"
-    },
-    {
-      "udalostId": "wWqNC9u",
-      "user": "olivernemcek7@gmail.com",
-      "text": "a kto tam bude?",
-      "id": "4p-_1ir"
-    },
-    {
-      "udalostId": "wWqNC9u",
-      "user": "olivernemcek7@gmail.com",
-      "text": "uz to ide?",
-      "id": "8aUw2A1"
-    },
-    {
-      "udalostId": "wWqNC9u",
-      "user": "olivernemcek7@gmail.com",
-      "text": "qeq",
-      "id": "bXhbSTq"
-    },
-    {
-      "udalostId": "wWqNC9u",
-      "user": "olivernemcek7@gmail.com",
-      "text": "qwqqqqq",
-      "id": "w5x_NWi"
-    },
-    {
-      "udalostId": "wWqNC9u",
-      "user": "olivernemcek7@gmail.com",
-      "text": "test",
-      "id": "qMIG2_T"
-    },
-    {
-      "udalostId": "2",
-      "user": "olivernemcek7@gmail.com",
-      "text": "mam rad futbal",
-      "id": "jpB1zmL"
-    },
-    {
-      "udalostId": "2",
-      "user": "olivernemcek7@gmail.com",
-      "text": "mate radi futbal?",
-      "id": "C-qVTYB"
-    },
-    {
-      "udalostId": "2",
-      "user": "olivernemcek7@gmail.com",
-      "text": "cock and ball torture",
-      "id": "0UUHsUE"
-    },
-    {
-      "udalostId": "2",
       "user": "ronniemcnutt@gmail.com",
-      "text": "loelc",
-      "id": "HbhRgXQ"
+      "text": "Jaky je vas nazor na astolfa?",
+      "id": "ucBSXfs"
+    },
+    {
+      "udalostId": "5WxP857",
+      "user": "ronniemcnutt@gmail.com",
+      "text": "zvykne to mu jebat",
+      "id": "FdwJ_QY"
+    },
+    {
+      "udalostId": "5WxP857",
+      "user": "olivernemcek7@gmail.com",
+      "text": "jn",
+      "id": "Y-eVUwS"
     }
   ]
 }
