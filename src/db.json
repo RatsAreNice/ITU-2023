@@ -23,6 +23,18 @@
       "end_time": "00:00",
       "creator": "ronniemcnutt@gmail.com",
       "id": "5WxP857"
+    },
+    {
+      "event_name": "Test kapacity",
+      "description": "loooool",
+      "location": "qqqqq",
+      "max_people": "1",
+      "start_date": "2023-12-16",
+      "start_time": "15:00",
+      "end_date": "2023-12-17",
+      "end_time": "17:00",
+      "creator": "ronniemcnutt@gmail.com",
+      "id": "tYly4cQ"
     }
   ],
   "prispevok": [
@@ -77,9 +89,24 @@
   ],
   "zaujemca": [
     {
+      "udalostId": "1",
+      "user": "ronniemcnutt@gmail.com",
+      "id": "ZFxYDrW"
+    },
+    {
+      "udalostId": "tYly4cQ",
+      "user": "ronniemcnutt@gmail.com",
+      "id": "kKA2SYR"
+    },
+    {
       "udalostId": "5WxP857",
       "user": "olivernemcek7@gmail.com",
-      "id": "1"
+      "id": "V3oOYqN"
+    },
+    {
+      "udalostId": "1",
+      "user": "olivernemcek7@gmail.com",
+      "id": "oBoZNVk"
     }
   ]
 }

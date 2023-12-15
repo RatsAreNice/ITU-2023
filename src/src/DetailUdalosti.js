@@ -5,27 +5,14 @@ import { Link } from "react-router-dom";
 import Diskusia from "./Diskusia";
 import Zaujemci from "./zaujemci";
 import { useState } from "react";
+import ZaujemButton from "./ZaujemButton";
 
 const DetailUdalosti = ( {AuthUser} ) => {
     const { id } = useParams()
     const navigate = useNavigate();
-    const [isLoading, setIsLoading] = useState(false)
+    //const [isLoading, setIsLoading] = useState(false)
     const [fetchAgain, setFetchagain] = useState(0)
-    let zaujem = false;
     const { data, isPending, Error} = useFetch('http://localhost:8000/udalost/' + id + '?_embed=zaujemca', fetchAgain)
-    let zaujemID = 0;
-
-    //zisti ci uzivatel ma o udalost zaujem
-    if(data && AuthUser){
-      data.zaujemca.forEach(checkInterest)
-    }
-    
-    function checkInterest(item) {
-      if(item.user === AuthUser.email){
-        zaujem = true;
-        zaujemID = item.id
-      }
-    } 
 
     const handleDelete = () => {
         //vymazanie prispevkov k danej udalosti
@@ -50,44 +37,6 @@ const DetailUdalosti = ( {AuthUser} ) => {
         }) 
     }
 
-    const potrvrditUcast = () => {
-      const udalostId = id;
-      const user = AuthUser.email;
-      const zaujem = { udalostId, user }
-
-      setIsLoading(true);
-
-      fetch('http://localhost:8000/zaujemca', {
-          method: 'POST',
-          headers: { "Content-Type" : "application/json" },
-          body: JSON.stringify(zaujem)
-        }).then(() => {
-          setIsLoading(false)
-          //tu potrebujem aby sa znova fetchli data
-          setFetchagain(fetchAgain + 1)
-          //test
-        })
-    }
-
-    const zrusitUcast = () => {
-      const udalostId = id;
-      const user = AuthUser.email;
-      const zaujem = { udalostId, user }
-
-      setIsLoading(true);
-
-      fetch('http://localhost:8000/zaujemca/' + zaujemID, {
-          method: 'DELETE',
-          //headers: { "Content-Type" : "application/json" },
-          //body: JSON.stringify(zaujem)
-        }).then(() => {
-          setIsLoading(false)
-          //tu potrebujem aby sa znova fetchli data
-          setFetchagain(fetchAgain + 1)
-          //test
-        })
-    }
-
     return (
         <div className="home">
         { Error && <div>{ Error }</div> }
@@ -100,8 +49,7 @@ const DetailUdalosti = ( {AuthUser} ) => {
             <p>Koniec : { data.end_date } o { data.end_time }</p>
             <p>Kapacita : { data.max_people } </p>
             <p>Popis : { data.description } </p>
-            { !zaujem && AuthUser && <button onClick={potrvrditUcast} >Mam zaujem</button> }
-            { zaujem && AuthUser && <button onClick={zrusitUcast}>Zrusit ucast</button> }
+            <ZaujemButton data={data} id={id} AuthUser={AuthUser} fetchAgain={fetchAgain} setFetchagain={setFetchagain} />
             { AuthUser && 
              AuthUser.email === data.creator ? (<div><button onClick={handleDelete}>Odstranit udalost</button>
             <Link to={`/udalost/${id}/upravit`}><button>Upravit udalost</button></Link></div>) : <></> }
