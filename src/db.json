@@ -1,18 +1,6 @@
 {
   "udalost": [
     {
-      "id": "1",
-      "event_name": "chodbovica",
-      "location": "ronnie",
-      "start_date": "01-01-2023",
-      "end_date": "01-01-2023",
-      "start_time": "13-00",
-      "end_time": "15-00",
-      "max_people": "13",
-      "description": "Popis udalosti chodbovica",
-      "creator": "ronniemcnutt@gmail.com"
-    },
-    {
       "id": "2",
       "event_name": "futbal",
       "location": "listovky",
@@ -23,78 +11,74 @@
       "max_people": "13",
       "description": "Popis udalosti futbal",
       "creator": "ronniemcnutt@gmail.com"
+    }
+  ],
+  "prispevok": [
+    {
+      "id": "1",
+      "udalostId": "1",
+      "user": "ronnie",
+      "text": "prispevok cislo jedna"
     },
     {
-      "event_name": "Party",
-      "description": "party na maneskach",
-      "location": "Manesky",
-      "max_people": "12",
-      "start_date": "2023-12-15",
-      "start_time": "15:00",
-      "end_date": "2023-12-15",
-      "end_time": "17:00",
-      "creator": "ronniemcnutt@gmail.com",
-      "id": "4vSQNOm"
+      "id": "2",
+      "udalostId": "1",
+      "user": "ronnie",
+      "text": "prispevok cislo dva"
     },
     {
-      "event_name": "Lolec",
-      "description": "lolec desc",
-      "location": "xddddd",
-      "max_people": "5",
-      "start_date": "2023-12-15",
-      "start_time": "10:00",
-      "end_date": "2023-12-17",
-      "end_time": "15:00",
-      "creator": "ronniemcnutt@gmail.com",
-      "id": "l6Y-VJ_"
+      "udalostId": "wWqNC9u",
+      "user": "olivernemcek7@gmail.com",
+      "text": "a kto tam bude?",
+      "id": "4p-_1ir"
     },
     {
-      "event_name": "Lolec",
-      "description": "lolec desc",
-      "location": "xddddd",
-      "max_people": "5",
-      "start_date": "2023-12-15",
-      "start_time": "10:00",
-      "end_date": "2023-12-17",
-      "end_time": "15:00",
-      "creator": "ronniemcnutt@gmail.com",
-      "id": "MvolCOx"
+      "udalostId": "wWqNC9u",
+      "user": "olivernemcek7@gmail.com",
+      "text": "uz to ide?",
+      "id": "8aUw2A1"
     },
     {
-      "event_name": "Redirect test",
-      "description": "sdadadadadada",
-      "location": "q",
-      "max_people": "1",
-      "start_date": "2023-12-15",
-      "start_time": "10:00",
-      "end_date": "2023-12-15",
-      "end_time": "03:00",
-      "creator": "ronniemcnutt@gmail.com",
-      "id": "mEt89OT"
+      "udalostId": "wWqNC9u",
+      "user": "olivernemcek7@gmail.com",
+      "text": "qeq",
+      "id": "bXhbSTq"
     },
     {
-      "event_name": "dq",
-      "description": "wqeqeq",
-      "location": "sdadad",
-      "max_people": "5",
-      "start_date": "2023-01-10",
-      "start_time": "10:00",
-      "end_date": "2023-01-31",
-      "end_time": "00:00",
-      "creator": "ronniemcnutt@gmail.com",
-      "id": "ckOuezc"
+      "udalostId": "wWqNC9u",
+      "user": "olivernemcek7@gmail.com",
+      "text": "qwqqqqq",
+      "id": "w5x_NWi"
     },
     {
-      "event_name": "Femboy party 2",
-      "description": "femboy party na maneskach",
-      "location": "Manesky",
-      "max_people": "17",
-      "start_date": "2023-12-16",
-      "start_time": "17:00",
-      "end_date": "2023-12-16",
-      "end_time": "20:00",
-      "creator": "olivernemcek7@gmail.com",
-      "id": "wWqNC9u"
+      "udalostId": "wWqNC9u",
+      "user": "olivernemcek7@gmail.com",
+      "text": "test",
+      "id": "qMIG2_T"
+    },
+    {
+      "udalostId": "2",
+      "user": "olivernemcek7@gmail.com",
+      "text": "mam rad futbal",
+      "id": "jpB1zmL"
+    },
+    {
+      "udalostId": "2",
+      "user": "olivernemcek7@gmail.com",
+      "text": "mate radi futbal?",
+      "id": "C-qVTYB"
+    },
+    {
+      "udalostId": "2",
+      "user": "olivernemcek7@gmail.com",
+      "text": "cock and ball torture",
+      "id": "0UUHsUE"
+    },
+    {
+      "udalostId": "2",
+      "user": "ronniemcnutt@gmail.com",
+      "text": "loelc",
+      "id": "HbhRgXQ"
     }
   ]
 }
