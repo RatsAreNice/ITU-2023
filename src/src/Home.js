@@ -1,10 +1,13 @@
 import './App.css';
 import useFetch from './useFetch';
 import { Link } from 'react-router-dom';
+import ZaujemButton from './ZaujemButton';
+import { useState } from 'react';
 
 
-function Home() {
-    const { data, isPending, Error} = useFetch('http://localhost:8000/udalost')
+function Home( {AuthUser} ) {
+  const [fetchAgain, setFetchagain] = useState(0)
+  const { data, isPending, Error} = useFetch('http://localhost:8000/udalost?_embed=zaujemca', fetchAgain)
 
   return (
     <div className="home">
@@ -20,6 +23,7 @@ function Home() {
             <h1>Udalost { event.event_name } </h1>
             <h2>{ event.location }</h2>
             </Link>
+            <ZaujemButton AuthUser={AuthUser} data={event} id={event.id} fetchAgain={fetchAgain} setFetchagain={setFetchagain} />
           </div>
         ))
         }

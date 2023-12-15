@@ -59,7 +59,7 @@ function App() {
       <Navbar />
       <div className='Content'>
             <Routes>
-              <Route exact path='/' element={< Home />}></Route>
+              <Route exact path='/' element={< Home AuthUser={AuthUser} />}></Route>
               <Route exact path='/moje' element={< MojeUdalosti AuthUser={AuthUser} />}></Route>
               <Route exact path='/profile' element={< Login AuthUser={AuthUser} />}></Route>
               <Route exact path='/vytvorit' element={< VytvoritUdalost AuthUser={AuthUser} />}></Route>
