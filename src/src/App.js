@@ -13,6 +13,7 @@ import AuthDetails from './components/auth/AuthDetails';
 import { useState, useEffect } from 'react';
 import { onAuthStateChanged } from "firebase/auth";
 import UpravitUdalost from './UpravitUdalost';
+import UdalostiZaujem from './UdalostiZaujem';
 
 function App() {
   // Your web app's Firebase configuration
@@ -66,6 +67,7 @@ function App() {
               <Route path="/udalost/:id" element={< DetailUdalosti AuthUser={AuthUser} />}></Route>
               <Route exact path="/register" element={< SignUp />}></Route>
               <Route path="/udalost/:id/upravit" element={< UpravitUdalost AuthUser={AuthUser} />}></Route>
+              <Route path="/zaujem" element={< UdalostiZaujem AuthUser={AuthUser} />}></Route>
             </Routes>
       </div>
     </div>

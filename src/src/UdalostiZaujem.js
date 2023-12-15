@@ -5,18 +5,31 @@ import Filters from './filters';
 import { useState } from 'react';
 import UdalostPreview from './UdalostPreview';
 
-
-function MojeUdalosti({ AuthUser }) {
-  const [fetchAgain, setFetchagain] = useState(0)
+function UdalostiZaujem({ AuthUser }) {
+    const [fetchAgain, setFetchagain] = useState(0)
     const { data, isPending, Error} = useFetch('http://localhost:8000/udalost?_embed=zaujemca', fetchAgain)
-    let filteredData = null;
+    let filteredData = [];
     const [newData, setNewData] = useState(null)
 
+    //filtrovanie udalosti aby sa zobrazovali iba tie o ktore ma uzivatel zaujem
     if((data != null) && (AuthUser != null)){
-      filteredData = data.filter(events => events.creator === AuthUser.email);
+        data.forEach(checkInterest)
     } else{
       filteredData = null;
     }
+
+    function checkInterest(item){
+        //console.log("pozeram veci k udalosti " + item.event_name)
+        item.zaujemca.forEach(checkUser)
+    }
+
+    function checkUser(item){
+        if (item.user === AuthUser.email){
+            //console.log(item);
+            filteredData.push(data.filter(events => events.id === item.udalostId)[0])
+        }
+    }
+    //filtrovanie udalosti aby sa zobrazovali iba tie o ktore ma uzivatel zaujem
 
     if (AuthUser == null){
       return (
@@ -32,11 +45,11 @@ function MojeUdalosti({ AuthUser }) {
           //data.event_name
           //<div><pre>{JSON.stringify(data, null, 2) }</pre></div> 
           <div className="udalosti">
-            <Filters data={data} setNewData={setNewData} />
+            <Filters data={filteredData} setNewData={setNewData} />
             {newData && newData.map((event) => (
               <div className="udalosti-preview" key={event.id} >
                 <UdalostPreview AuthUser={AuthUser} event={event} fetchAgain={fetchAgain} setFetchagain={setFetchagain} />
-              </div>
+            </div>
             ))
             }
           </div>}
@@ -45,4 +58,4 @@ function MojeUdalosti({ AuthUser }) {
     }
 }
 
-export default MojeUdalosti;
+export default UdalostiZaujem;
