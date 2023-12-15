@@ -1,11 +1,14 @@
 import './App.css';
 import useFetch from './useFetch';
 import { Link } from 'react-router-dom';
+import Filters from './filters';
+import { useState } from 'react';
 
 
 function MojeUdalosti({ AuthUser }) {
     const { data, isPending, Error} = useFetch('http://localhost:8000/udalost')
     let filteredData = null;
+    const [newData, setNewData] = useState(null)
 
     if((data != null) && (AuthUser != null)){
       filteredData = data.filter(events => events.creator === AuthUser.email);
@@ -23,10 +26,12 @@ function MojeUdalosti({ AuthUser }) {
           { Error && <div>{ Error }</div> }
           { isPending && <div>Loading...</div> }
           { filteredData && 
+          
           //data.event_name
           //<div><pre>{JSON.stringify(data, null, 2) }</pre></div> 
           <div className="udalosti">
-            {filteredData.map((event) => (
+            <Filters data={data} setNewData={setNewData} />
+            {newData && newData.map((event) => (
               <div className="udalosti-preview" key={event.id} >
                 <Link to={`/udalost/${event.id}`}>
                 <h1>Udalost { event.event_name } </h1>

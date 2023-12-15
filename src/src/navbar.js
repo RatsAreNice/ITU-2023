@@ -14,7 +14,7 @@ const Navbar = () => {
                 <button>Vytvorit udalost</button>
                 </Link>
                 <Link to="/moje">
-                        <button>Moje Udalosti</button>
+                        <button>Vytvorene Udalosti</button>
                 </Link>
                 <p id="saved"></p>
             </div>

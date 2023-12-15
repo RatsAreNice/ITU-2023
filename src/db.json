@@ -10,7 +10,8 @@
       "end_date": "2023-12-16",
       "end_time": "00:00",
       "creator": "ronniemcnutt@gmail.com",
-      "id": "1"
+      "id": "1",
+      "kategoria": "Sport"
     },
     {
       "event_name": "qqqqqqqqqqq",
@@ -22,7 +23,8 @@
       "end_date": "2023-12-15",
       "end_time": "00:00",
       "creator": "ronniemcnutt@gmail.com",
-      "id": "5WxP857"
+      "id": "5WxP857",
+      "kategoria": "Sport"
     },
     {
       "event_name": "Test kapacity",
@@ -34,7 +36,21 @@
       "end_date": "2023-12-17",
       "end_time": "17:00",
       "creator": "ronniemcnutt@gmail.com",
-      "id": "tYly4cQ"
+      "id": "tYly4cQ",
+      "kategoria": "Zabava"
+    },
+    {
+      "event_name": "2024",
+      "description": "sdada",
+      "location": "qqqqq",
+      "max_people": "5",
+      "start_date": "2024-12-12",
+      "start_time": "00:00",
+      "end_date": "2025-03-12",
+      "end_time": "00:00",
+      "creator": "olivernemcek7@gmail.com",
+      "kategoria": "Konicky",
+      "id": "tedNNJD"
     }
   ],
   "prispevok": [

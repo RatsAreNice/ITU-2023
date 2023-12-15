@@ -16,6 +16,7 @@ const UpravitUdalost = ( { AuthUser } ) => {
   const [end_time, setEnd_time] = useState("")
   const [isLoading, setIsLoading] = useState(false)
   const navigate = useNavigate();
+  const [kategoria, setKategoria] = useState("Sport")
 
     //fetch
     const [data, setData] = useState(null);
@@ -42,6 +43,7 @@ const UpravitUdalost = ( { AuthUser } ) => {
         setStart_time(data.start_time);
         setEnd_date(data.end_date);
         setEnd_time(data.end_time);
+        setKategoria(data.kategoria);
         setError(null);
         })
         .catch(err => {
@@ -55,7 +57,7 @@ const UpravitUdalost = ( { AuthUser } ) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     const creator = AuthUser.email;
-    const udalost = { event_name, description, location, max_people, start_date, start_time, end_date, end_time, creator, id}
+    const udalost = { event_name, description, location, max_people, start_date, start_time, end_date, end_time, creator, id, kategoria}
 
     setIsLoading(true);
 
@@ -129,6 +131,18 @@ const UpravitUdalost = ( { AuthUser } ) => {
     <label> Cas Konca: </label>
     <input type="time" min="00:00" max="23:59" required value={ end_time } onChange={(e) => setEnd_time(e.target.value)}/>
     
+    <label> Kategoria: </label>
+    <select
+      value={kategoria}
+      onChange={(e) => setKategoria(e.target.value)}
+    >
+      <option value={"Sport"}>Sport</option>
+      <option value={"Zabava"}>Zabava</option>
+      <option value={"Doskove hry"}>Doskove hry</option>
+      <option value={"Konicky"}>Konicky</option>
+      <option value={"Ine"}>Ine</option>
+    </select>
+
     { !isLoading && <button> Upravit </button>}
     { isLoading && <button disabled> Pridavam... </button>}
 

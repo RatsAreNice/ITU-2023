@@ -11,12 +11,13 @@ const VytvoritUdalost = ( { AuthUser } ) => {
   const [start_time, setStart_time] = useState("")
   const [end_time, setEnd_time] = useState("")
   const [isPending, setIsPending] = useState(false)
+  const [kategoria, setKategoria] = useState("Sport")
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
     const creator = AuthUser.email;
-    const udalost = { event_name, description, location, max_people, start_date, start_time, end_date, end_time, creator}
+    const udalost = { event_name, description, location, max_people, start_date, start_time, end_date, end_time, creator, kategoria}
 
     setIsPending(true);
 
@@ -82,6 +83,18 @@ const VytvoritUdalost = ( { AuthUser } ) => {
     
     <label> Cas Konca: </label>
     <input type="time" min="00:00" max="23:59" required value={ end_time } onChange={(e) => setEnd_time(e.target.value)}/>
+
+    <label> Kategoria: </label>
+    <select
+      value={kategoria}
+      onChange={(e) => setKategoria(e.target.value)}
+    >
+      <option value={"Sport"}>Sport</option>
+      <option value={"Zabava"}>Zabava</option>
+      <option value={"Doskove hry"}>Doskove hry</option>
+      <option value={"Konicky"}>Konicky</option>
+      <option value={"Ine"}>Ine</option>
+    </select>
     
     { !isPending && <button> Vytvorit udalost </button>}
     { isPending && <button disabled> Pridavam... </button>}
