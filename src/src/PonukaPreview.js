@@ -1,12 +1,8 @@
 import { Link } from "react-router-dom";
-import ZaujemButton from "./ZaujemButton";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 const PonukaPreview = ( {AuthUser, ponuka, fetchAgain, setFetchagain} ) => {
-    //useEffect(() => {
-    //    console.log("v udalost preview ide useeffect")
-    //    setFetchagain(fetchAgain + 1)
-    //}, [fetch2])
+    const [detail, setDetail] = useState(false);
 
     let vlastnik = false;
 
@@ -14,6 +10,14 @@ const PonukaPreview = ( {AuthUser, ponuka, fetchAgain, setFetchagain} ) => {
         if(AuthUser.email === ponuka.user){
             vlastnik = true;
         }
+    }
+
+    const zobrazitDetail = () => {
+        setDetail(true);
+    }
+
+    const skrytDetail = () => {
+        setDetail(false);
     }
 
     const handleDelete = () => {
@@ -28,8 +32,20 @@ const PonukaPreview = ( {AuthUser, ponuka, fetchAgain, setFetchagain} ) => {
     return ( 
         <div className="ponuka-preview" key={ponuka.id} >
             <h1>Ponuka { ponuka.nazov } </h1>
-            <h2>Popis: { ponuka.popis }</h2>
-            <h2>Od { ponuka.user }</h2>
+            <h2>Cena: { ponuka.cena }</h2>
+
+            {!detail && <button onClick={zobrazitDetail}> Detail </button>}
+            {detail && <button onClick={skrytDetail}> Skryt detail </button>}
+
+            {detail && 
+                <div className="detail">
+                <h2>Popis: { ponuka.popis }</h2>
+                <h2>Od { ponuka.user }</h2>
+                <div className="obrazok">
+                    <img src={ ponuka.image } alt="" />
+                </div>
+                </div>
+            }
             { vlastnik && 
             <div className="buttons">
                 <button onClick={handleDelete}> Odstranit ponuku </button>
