@@ -3,51 +3,25 @@ import logo from './imgs/ronniehomie.png';
 
 
 const Navbar = () => {
-    const LinkStyle = {
-        color: '#d285ae',
-        textDecoration: 'none',
-        padding: '10px',
-        margin: '5px',
-        border: '1px solid #d285ae',
-        borderRadius: '5px',
-        background: '#fff',
-        display: 'inline-block'
-    };
-    const ButtonsBackground = {
-        position: 'fixed',
-        top: 0,
-        left: 0,
-        width: '100%',
-        background: '#fff',
-        padding: '10px',
-        borderRadius: '5px',
-        display: 'flex',
-        justifyContent: 'space-between',
-        alignItems: 'center',
-        zIndex: 1,
-        overflow: 'visible',
-        
-    };
-
     return ( 
-        <div style={ButtonsBackground}>
+        <div className='buttonsBackground'>
             <img src={ logo }  width="50px" height="50px"/>
-            <Link to="/" style={LinkStyle}>
+            <Link className='navlink' to="/">
                 Vsetky Udalosti
             </Link>
-            <Link to="/profile" style={LinkStyle}>
+            <Link className='navlink' to="/profile">
                 Prihlasenie
             </Link>
-            <Link to="/vytvorit" style={LinkStyle}>
+            <Link className='navlink' to="/vytvorit">
                 Vytvorit udalost
             </Link>
-            <Link to="/moje" style={LinkStyle}>
+            <Link className='navlink' to="/moje">
                 Vytvorene Udalosti
             </Link>
-            <Link to="/zaujem" style={LinkStyle}>
-                Udalosti o ktore mam zaujem
+            <Link className='navlink' to="/zaujem">
+            <div className="testt">Udalosti o ktore mam zaujem</div>
             </Link>
-            <Link to="/trhovisko" style={LinkStyle}>
+            <Link className='navlink' to="/trhovisko">
                     Trhovisko
             </Link>
             <p id="saved"></p>

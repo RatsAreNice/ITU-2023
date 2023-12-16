@@ -53,3 +53,30 @@ code {
     border-radius: 8px;
     cursor: pointer;
   }
+
+  
+.buttonsBackground {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1;
+  overflow: visible;
+  background-color: #fff;
+}
+
+.navlink {
+  color: #d285ae;
+  text-decoration: none;
+  padding: 10px;
+  margin: 5px;
+  border: 1px solid #d285ae;
+  border-radius: 5px;
+  background: #fff;
+  display: inline-block;
+}
