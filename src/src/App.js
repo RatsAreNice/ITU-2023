@@ -52,13 +52,24 @@ function App() {
         listen();
     }
   }, []);
-
+  const content_padding = {
+    padding: '10px',
+    paddingTop: '50px',
+    paddingBottom: '50px',
+    background: '#fff',
+    borderRadius: '5px',
+    overflow: 'visible',
+    zIndex: 0,
+    position: 'relative',
+    marginTop: '20px'
+  };
   //informacie o prihlasenom uzivatelovi su v AuthUser. ak je to null, uzivatel je odhlaseny. AuthUser.email vrati jeho email
   return (
+    
     <Router>
     <div className="App">
       <Navbar />
-      <div className='Content'>
+      <div className='Content' style={content_padding}>
             <Routes>
               <Route exact path='/' element={< Home AuthUser={AuthUser} />}></Route>
               <Route exact path='/moje' element={< MojeUdalosti AuthUser={AuthUser} />}></Route>
