@@ -19,6 +19,9 @@ const Navbar = () => {
                 <Link to="/zaujem">
                         <button>Udalosti o ktore mam zaujem</button>
                 </Link>
+                <Link to="/trhovisko">
+                        <button>Trhovisko</button>
+                </Link>
                 <p id="saved"></p>
             </div>
             <br />
