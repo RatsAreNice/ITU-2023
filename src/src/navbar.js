@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-
+import logo from './imgs/ronniehomie.png';
 
 
 const Navbar = () => {
@@ -31,6 +31,7 @@ const Navbar = () => {
 
     return ( 
         <div style={ButtonsBackground}>
+            <img src={ logo }  width="50px" height="50px"/>
             <Link to="/" style={LinkStyle}>
                 Vsetky Udalosti
             </Link>

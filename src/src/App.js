@@ -59,18 +59,24 @@ function App() {
     padding: '10px',
     paddingTop: '50px',
     paddingBottom: '50px',
-    background: '#fff',
+    background: 'transparent',
     borderRadius: '5px',
     overflow: 'visible',
     zIndex: 0,
     position: 'relative',
     marginTop: '20px'
   };
+  const app_background = {
+    background: "linear-gradient(#e66465, #9198e5)",
+    backgroundSize: "cover",
+    backgroundRepeat: "no-repeat",
+    height: "100vh",
+  };
   //informacie o prihlasenom uzivatelovi su v AuthUser. ak je to null, uzivatel je odhlaseny. AuthUser.email vrati jeho email
   return (
     
     <Router>
-    <div className="App">
+    <div className="App" style={app_background}>
       <Navbar />
       <div className='Content' style={content_padding}>
             <Routes>
