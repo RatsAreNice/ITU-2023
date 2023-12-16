@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 
-const Filters = ( {data, setNewData} ) => {
+const Filters = ( {data, setNewData, fetchAgain} ) => {
     const today = new Date();
     const month = today.getMonth() + 1;
     const year = today.getFullYear();
@@ -31,7 +31,7 @@ const Filters = ( {data, setNewData} ) => {
 
     useEffect(() => {
         setNewData(newData5);
-    }, [Fstart_date, Fend_date, Fstart_time, Fend_time, Fkategoria])
+    }, [Fstart_date, Fend_date, Fstart_time, Fend_time, Fkategoria, data])
 
     return ( 
         <div className="filters">

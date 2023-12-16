@@ -1,8 +1,6 @@
 import './App.css';
 import useFetch from './useFetch';
-import { Link } from 'react-router-dom';
-import ZaujemButton from './ZaujemButton';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import Filters from './filters';
 import UdalostPreview from './UdalostPreview';
 
@@ -20,7 +18,7 @@ function Home( {AuthUser} ) {
       //data.event_name
       //<div><pre>{JSON.stringify(data, null, 2) }</pre></div> 
       <div className="udalosti">
-        <Filters data={data} setNewData={setNewData} />
+        <Filters data={data} setNewData={setNewData} fetchAgain={fetchAgain}/>
         {newData && newData.map((event) => (
           <div className="udalosti-preview" key={event.id} >
             <UdalostPreview AuthUser={AuthUser} event={event} fetchAgain={fetchAgain} setFetchagain={setFetchagain} />
