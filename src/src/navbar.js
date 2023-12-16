@@ -46,6 +46,9 @@ const Navbar = () => {
             <Link to="/zaujem" style={LinkStyle}>
                 Udalosti o ktore mam zaujem
             </Link>
+            <Link to="/trhovisko" style={LinkStyle}>
+                    Trhovisko
+            </Link>
             <p id="saved"></p>
             
             <br />

@@ -124,5 +124,35 @@
       "user": "olivernemcek7@gmail.com",
       "id": "8z46riR"
     }
+  ],
+  "ponuka": [
+    {
+      "id": "1",
+      "nazov": "podlozka pod mys",
+      "popis": "Mam ju uz 4 roky ale je v dobrom stave. Rozmery: 31x20cm",
+      "cena": "150kc",
+      "user": "olivernemcek7@gmail.com"
+    },
+    {
+      "id": "2",
+      "nazov": "vankus",
+      "popis": "Uplne novy vankus kupeny v JYSKu",
+      "cena": "300kc",
+      "user": "olivernemcek7@gmail.com"
+    },
+    {
+      "nazov": "Lol1",
+      "popis": "pred a po",
+      "cena": "90",
+      "user": "ronniemcnutt@gmail.com",
+      "id": "AJDipUw"
+    },
+    {
+      "nazov": "imagetest2",
+      "popis": "dsqdqsd",
+      "cena": "qdq",
+      "user": "ronniemcnutt@gmail.com",
+      "id": "CNzXstT"
+    }
   ]
 }
