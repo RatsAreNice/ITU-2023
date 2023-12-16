@@ -59,8 +59,14 @@ const VytvoritPonuku = ( { AuthUser } ) => {
         onChange={(e) => setCena(e.target.value)}
       ></input>
 
-    <input type="file" id="file-input" name="ImageStyle" value={image} onChange={(e) => setImage(e.target.value)}/>
-    
+    <label> URL obrazka: </label>
+      <input
+        type="text"
+        required
+        value={ image }
+        onChange={(e) => setImage(e.target.value)}
+      ></input>
+
     { !isPending && <button> Vytvorit ponuku </button>}
     { isPending && <button disabled> Pridavam... </button>}
 
