@@ -5,12 +5,14 @@ import logo from './imgs/ronniehomie.png';
 const Navbar = () => {
     return ( 
         <div className='buttonsBackground'>
+            <span className="logo">
             <img src={ logo }  width="50px" height="50px"/>
-            <Link className='navlink' to="/">
-                Vsetky Udalosti
-            </Link>
+            </span>
             <Link className='navlink' to="/profile">
                 Prihlasenie
+            </Link>
+            <Link className='navlink' to="/">
+                Vsetky Udalosti
             </Link>
             <Link className='navlink' to="/vytvorit">
                 Vytvorit udalost
