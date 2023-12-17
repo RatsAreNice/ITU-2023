@@ -121,54 +121,37 @@ code {
   .udalosti-preview {
     max-width: 400px;
     margin: 0 auto;
-    margin-bottom: 10px;
     background-color: #000;
+    margin-bottom: 10px;
     opacity: 0.8;
+    display: grid;
+    grid-template-columns: 200px 200px;
+    grid-row: auto auto;
+    grid-gap: 10px;
     border-radius: 8px;
-    align-items: center;
+    text-decoration: none;
+    .Udalost_Info {
+      font-size:20px;
+      color: #fff;
+      display: flex;
+      align-items:center;
+      justify-content:center;
+    }
   }.udalosti-preview :hover {
     opacity: 2;
     background: #8b0000;
+    border-radius: 8px;
   }
-  
+  .ZaujemButton {
+    background: #2bbe2b;
+    color: #fff;
+    border: 0;
+    font-size: 20px;
+    padding: 13px;
+    border-radius: 50px;
+    margin-top: 20px;
+    cursor: pointer;
+  }
   .filters{
     padding-bottom: 10px;
-  }
-
-  .Udalost_name {
-    color: #fff;
-    font-size: 20px;
-    align-self: left;
-    padding-left: 10px;
-    padding-top: 2px;
-    text-decoration: none;
-    margin: 0;
-    float: left;
-  }
-  .Udalost_lokacia {
-    color: #fff;
-    font-size: 20px;
-    padding-right: 10px;
-    padding-top: 2px;
-    text-decoration: none;
-    margin: 0;
-    float: inline-end;
-    
-  }
-  .Udalost_zaciatok {
-    color: #fff;
-    font-size: 15px;
-    padding-left: 10px;
-    padding-top: 5px;
-    text-decoration: none;
-    margin: 0;
-    float: left;
-  }
-  .Udalost_kategoria {
-    color: #fff;
-    font-size: 15px;
-    padding-top: 5px;
-    padding-bottom: 10px;
-    text-decoration: none;
-    margin: 0;
   }
