@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from 'react-router-dom'
 
-const VytvoritUdalost = ( { AuthUser, fetchAgain, setFetchagain } ) => {
+const VytvoritUdalost = ( { AuthUser, fetchAgain, setFetchagain, setVytvorenie } ) => {
   const [event_name, setEvent_name] = useState("")
   const [description, setDescription] = useState("")
   const [location, setLocation] = useState("")
@@ -19,7 +19,7 @@ const VytvoritUdalost = ( { AuthUser, fetchAgain, setFetchagain } ) => {
     e.preventDefault();
     const creator = AuthUser.email;
     const udalost = { event_name, description, location, max_people, start_date, start_time, end_date, end_time, creator, kategoria}
-
+    
     setIsPending(true);
 
     fetch('http://localhost:8000/udalost', {
@@ -29,6 +29,7 @@ const VytvoritUdalost = ( { AuthUser, fetchAgain, setFetchagain } ) => {
     }).then(() => {
       setIsPending(false)
       setFetchagain(fetchAgain + 1);
+      setVytvorenie(false);
       navigate("/");
     })
   }

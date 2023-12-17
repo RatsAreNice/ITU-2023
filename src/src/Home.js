@@ -25,7 +25,7 @@ function Home( {AuthUser} ) {
       {!vytvorenie && <button onClick={showVytvorenie}>Vytvorit udalost</button>}
       {vytvorenie && <button onClick={hideVytvorenie}>Vytvorit udalost</button>}
 
-      {vytvorenie && <VytvoritUdalost AuthUser={AuthUser} fetchAgain={fetchAgain} setFetchagain={setFetchagain} />}
+      {vytvorenie && <VytvoritUdalost AuthUser={AuthUser} fetchAgain={fetchAgain} setFetchagain={setFetchagain} setVytvorenie = {setVytvorenie}/>}
       { Error && <div>{ Error }</div> }
       { isPending && <div>Loading...</div> }
       { data &&

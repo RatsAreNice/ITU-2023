@@ -119,30 +119,24 @@ code {
   }
 
   .udalosti-preview {
-    max-width: 400px;
+    max-width: fit-content;
     margin: 0 auto;
     background-color: #000;
     margin-bottom: 10px;
     opacity: 0.8;
-    display: grid;
-    grid-template-columns: 200px 200px;
-    grid-row: auto auto;
-    grid-gap: 10px;
     border-radius: 8px;
     text-decoration: none;
     .Udalost_Info {
+      text-decoration: none;
       font-size:20px;
       color: #fff;
-      display: flex;
-      align-items:center;
-      justify-content:center;
     }
   }.udalosti-preview :hover {
     opacity: 2;
     background: #8b0000;
     border-radius: 8px;
   }
-  .ZaujemButton {
+  .ZaujemButton button{
     background: #2bbe2b;
     color: #fff;
     border: 0;
@@ -150,7 +144,10 @@ code {
     padding: 13px;
     border-radius: 50px;
     margin-top: 20px;
+    margin-left: 7px;
+    margin-right: 7px;
     cursor: pointer;
+    width: 90% + 30px;
   }
   .filters{
     padding-bottom: 10px;
