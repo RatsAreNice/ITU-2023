@@ -1,66 +1,134 @@
-import { useEffect, useState } from "react"
+import { useEffect, useState } from "react";
 
-const Filters = ( {data, setNewData, fetchAgain} ) => {
-    const today = new Date();
-    const month = today.getMonth() + 1;
-    const year = today.getFullYear();
-    const date = today.getDate();
+const Filters = ({ data, setNewData }) => {
+  const today = new Date();
+  const month = today.getMonth() + 1;
+  const year = today.getFullYear();
+  const date = today.getDate();
 
-    const [Fstart_date, setStart_date] = useState(`${year}-${month}-${date}`)
-    const [Fend_date, setEnd_date] = useState(`${year+1}-${month}-${date}`)
-    const [Fstart_time, setStart_time] = useState("00:00")
-    const [Fend_time, setEnd_time] = useState("23:59")
-    const [Fkategoria, setKategoria] = useState("Kategoria")
+  const [Fstart_date, setStart_date] = useState(
+    `${year}-${String(month).padStart(2, '0')}-${String(date).padStart(2, '0')}`
+  );
+  const [Fend_date, setEnd_date] = useState(
+    `${year + 1}-${String(month).padStart(2, '0')}-${String(date).padStart(2, '0')}`
+  );
+  const [Fstart_time, setStart_time] = useState("00:00");
+  const [Fend_time, setEnd_time] = useState("23:59");
+  const [Fkategoria, setKategoria] = useState("");
 
-    const newData = data.filter(event => event.start_date >= Fstart_date) 
+  const adjustDate = (currentDate, adjustment) => {
+    const newDate = new Date(currentDate);
+    newDate.setDate(newDate.getDate() + adjustment);
+    return newDate.toISOString().split('T')[0];
+  };
 
-    const newData2 = newData.filter((event => (event.start_date !== Fstart_date) || (event.start_time >= Fstart_time)))
+  const adjustTime = (currentTime, adjustment) => {
+    const timeParts = currentTime.split(':');
+    const date = new Date();
+    date.setHours(parseInt(timeParts[0], 10), (parseInt(timeParts[1], 10) + adjustment) % 60);
+    return date.toTimeString().slice(0, 5);
+  };
 
-    const newData3 = newData2.filter(event => event.start_date <= Fend_date)
+  useEffect(() => {
+    const filteredData = data.filter(event =>
+      event.start_date >= Fstart_date &&
+      event.start_time >= Fstart_time &&
+      event.start_date <= Fend_date &&
+      event.start_time <= Fend_time &&
+      (Fkategoria === "" || event.kategoria === Fkategoria)
+    );
+    setNewData(filteredData);
+  }, [Fstart_date, Fend_date, Fstart_time, Fend_time, Fkategoria, data, setNewData]);
 
-    const newData4 = newData3.filter((event => (event.start_date !== Fend_date) || (event.start_time <= Fstart_time)))
-
-    let newData5 = null
-
-    if (Fkategoria !== "Kategoria"){
-        newData5 = newData4.filter((event => event.kategoria === Fkategoria))
-    }else{
-        newData5 = newData4
+  const styles = {
+    filtersContainer: {
+      display: 'flex',
+      flexDirection: 'column',
+      justifyContent: 'center',
+      alignItems: 'center',
+      padding: '20px',
+      gap: '10px',
+      backgroundColor: 'transparent',
+      borderRadius: '5px',
+      margin: '0 auto',
+      width: 'max-content',
+    },
+    inputGroup: {
+      display: 'flex',
+      alignItems: 'center',
+      gap: '5px',
+    },
+    button: {
+      backgroundColor: '#ADD8E6',
+      color: '#1F51FF',
+      border: '1px solid white',
+      padding: '5px 10px',
+      borderRadius: '50%',
+      cursor: 'pointer',
+      fontSize: '0.9rem',
+    },
+    input: {
+      backgroundColor: 'transparent',
+      color: 'white',
+      border: '1px solid white',
+      borderRadius: '5px',
+      padding: '5px 10px',
+      fontSize: '0.9rem',
+      width: '80px',
+    },
+    select: {
+      backgroundColor: 'transparent',
+      color: 'black',
+      border: '1px solid white',
+      borderRadius: '5px',
+      padding: '5px 10px',
+      fontSize: '0.9rem',
+    },
+    label: {
+      color: 'white',
+      fontSize: '0.9rem',
     }
+  };
+
+  return (
+    <div style={styles.filtersContainer}>
+      <div style={styles.inputGroup}>
+        <label style={styles.label}>Od:</label>
+        <button style={styles.button} onClick={() => setStart_time(adjustTime(Fstart_time, -30))}>-</button>
+        <input style={styles.input} type="time" value={Fstart_time} onChange={(e) => setStart_time(e.target.value)} />
+        <button style={styles.button} onClick={() => setStart_time(adjustTime(Fstart_time, 30))}>+</button>
         
+        <label style={styles.label}>Do:</label>
+        <button style={styles.button} onClick={() => setEnd_time(adjustTime(Fend_time, -30))}>-</button>
+        <input style={styles.input} type="time" value={Fend_time} onChange={(e) => setEnd_time(e.target.value)} />
+        <button style={styles.button} onClick={() => setEnd_time(adjustTime(Fend_time, 30))}>+</button>
+      </div>
+      
+      <div style={styles.inputGroup}>
+        <label style={styles.label}>Dátum od:</label>
+        <button style={styles.button} onClick={() => setStart_date(adjustDate(Fstart_date, -1))}>-</button>
+        <input style={styles.input} type="date" value={Fstart_date} onChange={(e) => setStart_date(e.target.value)} />
+        <button style={styles.button} onClick={() => setStart_date(adjustDate(Fstart_date, 1))}>+</button>
+        
+        <label style={styles.label}>Dátum do:</label>
+        <button style={styles.button} onClick={() => setEnd_date(adjustDate(Fend_date, -1))}>-</button>
+        <input style={styles.input} type="date" value={Fend_date} onChange={(e) => setEnd_date(e.target.value)} />
+        <button style={styles.button} onClick={() => setEnd_date(adjustDate(Fend_date, 1))}>+</button>
+      </div>
+      
+      <div style={styles.inputGroup}>
+        <label style={styles.label}>Kategória:</label>
+        <select style={styles.select} value={Fkategoria} onChange={(e) => setKategoria(e.target.value)}>
+          <option value="">Všetky</option>
+          <option value="Sport">Sport</option>
+          <option value="Zabava">Zábava</option>
+          <option value="Doskove hry">Doskové hry</option>
+          <option value="Konicky">Koníčky</option>
+          <option value="Ine">Iné</option>
+        </select>
+      </div>
+    </div>
+  );
+};
 
-    useEffect(() => {
-        setNewData(newData5);
-    }, [Fstart_date, Fend_date, Fstart_time, Fend_time, Fkategoria, data])
-
-    return ( 
-        <div className="filters">
-            <h1>Filtre</h1>
-            <form>
-                <label>Cas od: </label>
-                <input type="time" value={Fstart_time} onChange={(e) => setStart_time(e.target.value)}></input>
-                <label>Cas do: </label>
-                <input type="time" value={Fend_time} onChange={(e) => setEnd_time(e.target.value)}></input>
-                <label>Datum od: </label>
-                <input type="date" value={Fstart_date} onChange={(e) => setStart_date(e.target.value)}></input>
-                <label>Datum do: </label>
-                <input type="date" value={Fend_date} onChange={(e) => setEnd_date(e.target.value)}></input>
-
-                <label> Kategoria: </label>
-                <select
-                value={Fkategoria}
-                onChange={(e) => setKategoria(e.target.value)}
-                >
-                <option value={"Kategoria"}>Kategoria</option>
-                <option value={"Sport"}>Sport</option>
-                <option value={"Zabava"}>Zabava</option>
-                <option value={"Doskove hry"}>Doskove hry</option>
-                <option value={"Konicky"}>Konicky</option>
-                <option value={"Ine"}>Ine</option>
-                </select>
-            </form>
-        </div>
-     );
-}
- 
 export default Filters;

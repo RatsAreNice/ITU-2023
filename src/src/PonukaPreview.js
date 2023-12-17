@@ -16,12 +16,9 @@ const PonukaPreview = ({ AuthUser, ponuka, fetchAgain, setFetchagain }) => {
       method: "DELETE",
     }).then(() => {
       setFetchagain(fetchAgain + 1);
-      // If you have a routing setup, you might want to navigate back to the list.
-      // navigate('/');
     });
   };
 
-  // Inline styles
   const styles = {
     card: {
       backgroundColor: '#fff',

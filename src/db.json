@@ -935,6 +935,19 @@
       "creator": "stupid@stupid.stupid",
       "kategoria": "Sport",
       "id": "I0qrBlo"
+    },
+    {
+      "event_name": "ritna olympiada",
+      "description": "a sak co",
+      "location": "atriaky",
+      "max_people": "10",
+      "start_date": "2024-02-29",
+      "start_time": "10:00",
+      "end_date": "2024-05-05",
+      "end_time": "15:00",
+      "creator": "aliser@abilov.kz",
+      "kategoria": "Ine",
+      "id": "owKeAB6"
     }
   ],
   "prispevok": [

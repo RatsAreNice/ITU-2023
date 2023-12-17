@@ -20,10 +20,48 @@ function Home( {AuthUser} ) {
     setVytvorenie(false)
   }
 
+  
+  // Style for the 'Vytvorit udalost' button
+  const buttonStyle = {
+    padding: '10px 20px',
+    borderRadius: '20px',
+    border: 'none',
+    backgroundColor: '#fff',
+    color: '#ff7e5f', 
+    cursor: 'pointer',
+    fontWeight: '600',
+    fontSize: '1rem',
+    boxShadow: '0 4px 8px rgba(0, 0, 0, 0.2)',
+    margin: '10px 0',
+    outline: 'none',
+    transition: 'background-color 0.3s, transform 0.3s',
+  };
+
+
+  const handleMouseOver = (event) => {
+    event.target.style.backgroundColor = '#ff7e5f';
+    event.target.style.color = '#fff';
+    event.target.style.transform = 'translateY(-2px)';
+  };
+
+  const handleMouseOut = (event) => {
+    event.target.style.backgroundColor = '#fff';
+    event.target.style.color = '#ff7e5f';
+    event.target.style.transform = 'translateY(0px)';
+  };
+
   return (
     <div className="home">
-      {!vytvorenie && <button onClick={showVytvorenie}>Vytvorit udalost</button>}
-      {vytvorenie && <button onClick={hideVytvorenie}>Vytvorit udalost</button>}
+      {!vytvorenie && <button onClick={showVytvorenie} 
+      onMouseOver={handleMouseOver}
+      onMouseOut={handleMouseOut}
+      style={buttonStyle}
+      >Vytvorit udalost</button>}
+      {vytvorenie && <button onClick={hideVytvorenie}
+       onMouseOver={handleMouseOver}
+       onMouseOut={handleMouseOut}
+       style={buttonStyle}
+       >Vytvorit udalost</button>}
 
       {vytvorenie && <VytvoritUdalost AuthUser={AuthUser} fetchAgain={fetchAgain} setFetchagain={setFetchagain} setVytvorenie = {setVytvorenie}/>}
       { Error && <div>{ Error }</div> }
