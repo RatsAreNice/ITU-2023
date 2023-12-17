@@ -1,3 +1,8 @@
+/*
+  Autori: Matúš Dobiáš, Oliver Nemček
+  Popis: Upravenie ponuky
+  */
+
 import { useState } from "react";
 import { useNavigate } from 'react-router-dom'
 import { useParams } from "react-router-dom";
@@ -16,7 +21,7 @@ const UpravitPonuku = ( { AuthUser } ) => {
     //fetch
     useEffect(() => {
 
-    fetch('http://localhost:8000/ponuka/' + id)
+    fetch('http://localhost:8000/ponuka/' + id)  // https://www.youtube.com/watch?v=DTBta08fXGU 
     .then(res => {
     if (!res.ok) { // error coming back from server
         throw Error('could not fetch the data for that resource');
@@ -67,37 +72,39 @@ const UpravitPonuku = ( { AuthUser } ) => {
       }
   }
 
-  return ( 
+  return ( //STYLING V index.css
+    <div className="createContainer"> 
     <div className="create">
     <h2>Upravit ponuku</h2>
     <form onSubmit={handleSubmit}>
-      <label> Nazov: </label>
+      <label> Nazov: 
       <input
         type="text"
         required
         value={ nazov }
         onChange={(e) => setNazov(e.target.value)}
-      ></input>
+      ></input></label>
 
-      <label> Popis: </label>
+      <label> Popis: 
       <textarea
         required
         value={ popis }
         onChange={(e) => setPopis(e.target.value)}
-      ></textarea>
+      ></textarea></label>
 
-      <label> Cena: </label>
+      <label> Cena: 
       <input
         type="text"
         required
         value={ cena }
         onChange={(e) => setCena(e.target.value)}
-      ></input>
+      ></input></label>
     
     { !isPending && <button> Upravit ponuku </button>}
     { isPending && <button disabled> Odosielam... </button>}
 
     </form>
+    </div>
     </div>
    );
 
