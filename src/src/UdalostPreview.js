@@ -10,6 +10,7 @@ const UdalostPreview = ({ AuthUser, event, fetchAgain, setFetchagain }) => {
 
     useEffect(() => {
         setFetchagain(fetchAgain + 1);
+        console.log("runnuje setfetchagain")
     }, [fetch2]);
 
     const expand = () => {
@@ -57,12 +58,12 @@ const UdalostPreview = ({ AuthUser, event, fetchAgain, setFetchagain }) => {
                             AuthUser={AuthUser}
                             data={event}
                             id={event.id}
-                            fetchAgain={fetchAgain}
-                            setFetchagain={setFetchagain}
+                            fetchAgain={fetch2}
+                            setFetchagain={setFetch2}
                         />
                     </div></div>
                 </div>
-                {expanded && <DetailUdalosti AuthUser={AuthUser} id={event.id}/>}
+                {expanded && <DetailUdalosti fetch2={fetch2} AuthUser={AuthUser} id={event.id}/>}
                 
 
                 

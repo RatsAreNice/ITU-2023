@@ -63,7 +63,7 @@ const ZaujemButton = ( {id, data, AuthUser, fetchAgain, setFetchagain} ) => {
         <div className="zaujemButton">
         { isLoading && <div>Nacitavam...</div>}
         { !zaujem && AuthUser && !isLoading && !full && <button onClick={potrvrditUcast} >Mam zaujem</button> }
-        { !zaujem && AuthUser && !isLoading && full && <button disabled >Kapacita naplnena</button> }
+        { !zaujem && AuthUser && !isLoading && full && <span className="cervena"><button disabled >Kapacita plná</button></span> }
         { zaujem && AuthUser && !isLoading && <button onClick={zrusitUcast}>Zrusit ucast</button> }
         </div>
      );

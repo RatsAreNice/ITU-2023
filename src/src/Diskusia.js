@@ -37,23 +37,27 @@ const Diskusia = ( {id , AuthUser} ) => {
           //<div><pre>{JSON.stringify(data, null, 2) }</pre></div> 
           <div className="udalosti">
             {data.prispevok.map((prisp) => (
-              <div className="udalosti-preview" key={prisp.id} >
-                <h1>Prispevok od { prisp.user } </h1>
-                <h2>{ prisp.text }</h2>
+              <div className="prispevok" key={prisp.id} >
+                <div className="fromuser">{ prisp.user } </div>
+                <div className="prispevok-text">{ prisp.text }</div>
               </div>
             ))
             }
             { AuthUser &&  
             <form onSubmit={handleSubmit}>
-            <label> Pridat prispevok: </label>
+            <div className="pridatPrispevok">
             <input
+            placeholder="Pridať príspevok..."
                 type="text"
                 required
                 value={ text }
                 onChange={(e) => setText(e.target.value)}
             ></input>
+            <span className="prispevokButton">
             { !isLoading && <button> Odoslat </button>}
             { isLoading && <button disabled> Odosielam... </button>}
+            </span>
+            </div>
             </form>
             }
             
