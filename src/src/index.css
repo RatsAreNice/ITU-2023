@@ -379,3 +379,8 @@ body {
     .cervena :hover {
         cursor:default
     }
+
+    .trh_img {
+        width: 100%;
+        height: 100%;
+    }
