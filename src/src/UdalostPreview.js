@@ -63,11 +63,7 @@ const UdalostPreview = ({ AuthUser, event, fetchAgain, setFetchagain }) => {
                         />
                     </div></div>
                 </div>
-                {expanded && <DetailUdalosti fetch2={fetch2} AuthUser={AuthUser} id={event.id}/>}
-                
-
-                
-            
+                {expanded && <DetailUdalosti fetch2={fetch2} AuthUser={AuthUser} id={event.id} setFetch2={setFetch2} fetch3={fetch2}/>}
         </div>
     );
 };

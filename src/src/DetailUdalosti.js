@@ -7,16 +7,14 @@ import Zaujemci from "./zaujemci";
 import { useEffect, useState } from "react";
 import ZaujemButton from "./ZaujemButton";
 
-const DetailUdalosti = ( {AuthUser, id, fetch2} ) => {
+const DetailUdalosti = ( {AuthUser, id, fetch2, setFetch2, fetch3} ) => {
     const navigate = useNavigate();
-    //const [isLoading, setIsLoading] = useState(false)
     const [fetchAgain, setFetchagain] = useState(0)
     const { data, isPending, Error} = useFetch('http://localhost:8000/udalost/' + id + '?_embed=zaujemca', fetchAgain)
     let ucastnici = 0;
 
     useEffect(() => {
       setFetchagain(fetchAgain + 1);
-      console.log("runnuje setfetchagain v detaile")
   }, [fetch2]);
 
     const handleDelete = () => {
@@ -38,7 +36,7 @@ const DetailUdalosti = ( {AuthUser, id, fetch2} ) => {
         fetch('http://localhost:8000/udalost/' + id, {
             method: "DELETE"
         }).then(() => {
-            navigate('/')
+            setFetch2(fetch3 + 1);
         }) 
     }
 
