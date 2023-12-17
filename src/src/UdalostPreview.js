@@ -1,35 +1,58 @@
 import { Link } from "react-router-dom";
 import ZaujemButton from "./ZaujemButton";
 import { useEffect, useState } from "react";
+import DetailUdalosti from "./DetailUdalosti";
 
 const UdalostPreview = ({ AuthUser, event, fetchAgain, setFetchagain }) => {
     const [fetch2, setFetch2] = useState(0);
+    const [expanded, setExpanded] = useState(false);
+    let ucastnici = 0;
 
     useEffect(() => {
-        console.log("v udalost preview ide useeffect");
         setFetchagain(fetchAgain + 1);
     }, [fetch2]);
 
+    const expand = () => {
+        if(expanded === true){
+            setExpanded(false);
+        }
+        else{
+            setExpanded(true)
+        }
+    }
+
+    if(event){
+        event.zaujemca.forEach(checkInterest)
+      }
+
+    function checkInterest(item) {
+        ucastnici++;
+      } 
+
     return (
-        <table className="udalosti-preview" key={event.id}>
-            <Link to={`/udalost/${event.id}`}>
-            <tbody>
-                <tr>
-                    <td><div className="Udalost_Info">Udalosť:</div></td>
-                    <td><div className="Udalost_Info">Lokacia:</div></td>
-                    <td><div className="Udalost_Info">Začiatok:</div></td>
-                    <td><div className="Udalost_Info">Kategoria:</div></td>
-                </tr>
-                <tr>
-                        <td><div className="Udalost_Info">{event.event_name}</div></td>
-                        <td><div className="Udalost_Info">{event.location}</div></td>
-                        <td><div className="Udalost_Info">
-                            {event.start_date} <br /> {event.start_time}
-                        </div></td>
-                        <td><div className="Udalost_Info">{event.kategoria}</div></td>
-                </ tr>
-            </tbody>
-            <div className="ZaujemButton">
+        <div className="udalosti-previewq" key={event.id}>
+            <div className="expandable">
+                <div className="timeLine"> 
+                <span className="udalostinfo">{event.start_date}</span>
+                <span className="udalostinfo">{event.start_time} - {event.end_time}</span> 
+                <div className="ucwrapper">
+                <span className="udalostinfo4">{ucastnici} / {event.max_people}</span> 
+                </div>
+                </div><br /><br />
+                <span className="udalostinfo2">{event.event_name}</span> 
+                <br /><br />
+                <span className="udalostinfo3">{event.description}</span> 
+                </div>
+                <br />
+                <div className="ciara">
+                <hr />
+                </div>
+                <div className="spodok">
+                    <div className="lokacia">{event.location}</div>
+                    <div className="discussWrapper">
+                    <div className="discuss" onClick={expand}> Detail </div>
+                    </div>
+                    <div className="zucastnenie"><div className="ZaujemButton">
                         <ZaujemButton 
                             AuthUser={AuthUser}
                             data={event}
@@ -37,9 +60,14 @@ const UdalostPreview = ({ AuthUser, event, fetchAgain, setFetchagain }) => {
                             fetchAgain={fetchAgain}
                             setFetchagain={setFetchagain}
                         />
-                    </div>
-            </Link>
-        </table>
+                    </div></div>
+                </div>
+                {expanded && <DetailUdalosti AuthUser={AuthUser} id={event.id}/>}
+                
+
+                
+            
+        </div>
     );
 };
  

@@ -29,9 +29,8 @@ const VytvoritUdalost = ({ AuthUser, fetchAgain, setFetchagain, setVytvorenie })
       setIsPending(false);
       setFetchagain(fetchAgain + 1);
       setVytvorenie(false);
-      navigate("/");
-    });
-  };
+    })
+  }
 
   if (AuthUser == null) {
     return <h1>Pre vytvorenie udalosti musite byt prihlaseny</h1>;
