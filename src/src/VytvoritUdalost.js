@@ -225,8 +225,7 @@ const VytvoritUdalost = ({ AuthUser, fetchAgain, setFetchagain, setVytvorenie })
         style={buttonStyles}
         onMouseEnter={(e) => handleButtonHover(e, true)}
         onMouseLeave={(e) => handleButtonHover(e, false)}
-        onClick={() => setVytvorenie(!setVytvorenie)}
-      >
+        >
         Vytvorit udalost
       </button>}
         {isPending && <button style={formStyles.button} disabled>Pridavam...</button>}

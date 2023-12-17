@@ -1,6 +1,7 @@
+//Autor: Oliver Nemček
+
 import { useState } from "react";
 import useFetch from "./useFetch";
-import { Link } from "react-router-dom";
 
 const Diskusia = ( {id , AuthUser} ) => {
     const [text, setText] = useState("")
@@ -22,9 +23,7 @@ const Diskusia = ( {id , AuthUser} ) => {
           body: JSON.stringify(prispevok)
         }).then(() => {
           setIsLoading(false)
-          //tu potrebujem aby sa znova fetchli data
           setFetchagain(fetchAgain + 1)
-          //test
         })
       }
 

@@ -1,3 +1,5 @@
+//Autor: Oliver Nemček
+
 import { useEffect, useState } from "react";
 
 const Filters = ({ data, setNewData }) => {
@@ -24,22 +26,41 @@ const Filters = ({ data, setNewData }) => {
 
   const adjustTime = (currentTime, adjustment) => {
     const timeParts = currentTime.split(':');
-    const date = new Date();
-    date.setHours(parseInt(timeParts[0], 10), (parseInt(timeParts[1], 10) + adjustment) % 60);
-    return date.toTimeString().slice(0, 5);
+    let hours = parseInt(timeParts[0], 10);
+    let minutes = parseInt(timeParts[1], 10) + adjustment;
+
+    if (minutes >= 60) {
+      minutes -= 60;
+      hours += 1;
+    } else if (minutes < 0) {
+      minutes += 60;
+      hours -= 1;
+    }
+
+    if (hours >= 24) {
+      hours = 0;
+    } else if (hours < 0) {
+      hours = 23;
+    }
+
+    return `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}`;
+  };
+  const combineDateTime = (date, time) => {
+    return new Date(`${date}T${time}`);
   };
 
   useEffect(() => {
-    const filteredData = data.filter(event =>
-      event.start_date >= Fstart_date &&
-      event.start_time >= Fstart_time &&
-      event.start_date <= Fend_date &&
-      event.start_time <= Fend_time &&
-      (Fkategoria === "" || event.kategoria === Fkategoria)
-    );
+    const filteredData = data.filter(event => {
+      const eventStartDateTime = combineDateTime(event.start_date, event.start_time);
+      const filterStartDateTime = combineDateTime(Fstart_date, Fstart_time);
+      const filterEndDateTime = combineDateTime(Fend_date, Fend_time);
+
+      return eventStartDateTime >= filterStartDateTime &&
+             eventStartDateTime <= filterEndDateTime &&
+             (Fkategoria === "" || event.kategoria === Fkategoria);
+    });
     setNewData(filteredData);
   }, [Fstart_date, Fend_date, Fstart_time, Fend_time, Fkategoria, data, setNewData]);
-
   const styles = {
     filtersContainer: {
       display: 'flex',
@@ -120,7 +141,7 @@ const Filters = ({ data, setNewData }) => {
         <label style={styles.label}>Kategória:</label>
         <select style={styles.select} value={Fkategoria} onChange={(e) => setKategoria(e.target.value)}>
           <option value="">Všetky</option>
-          <option value="Sport">Sport</option>
+          <option value="Sport">Šport</option>
           <option value="Zabava">Zábava</option>
           <option value="Doskove hry">Doskové hry</option>
           <option value="Konicky">Koníčky</option>

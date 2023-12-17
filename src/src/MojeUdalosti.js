@@ -74,7 +74,7 @@ function MojeUdalosti({ AuthUser }) {
           style={buttonStyle}
           >Vytvorit udalost</button>}
 
-          {vytvorenie && <VytvoritUdalost AuthUser={AuthUser} fetchAgain={fetchAgain} setFetchagain={setFetchagain} />}
+          {vytvorenie && <VytvoritUdalost AuthUser={AuthUser} fetchAgain={fetchAgain} setFetchagain={setFetchagain} setVytvorenie={setVytvorenie}/>}
           { Error && <div>{ Error }</div> }
           { isPending && <div>Loading...</div> }
           { filteredData && 

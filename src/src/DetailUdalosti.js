@@ -1,11 +1,11 @@
-import { useParams } from "react-router-dom";
+//Autor: Oliver Nemček
+
 import useFetch from "./useFetch";
 import { useNavigate } from 'react-router-dom'
 import { Link } from "react-router-dom";
 import Diskusia from "./Diskusia";
 import Zaujemci from "./zaujemci";
 import { useEffect, useState } from "react";
-import ZaujemButton from "./ZaujemButton";
 
 const DetailUdalosti = ( {AuthUser, id, fetch2, setFetch2, fetch3} ) => {
     const navigate = useNavigate();
@@ -21,7 +21,7 @@ const DetailUdalosti = ( {AuthUser, id, fetch2, setFetch2, fetch3} ) => {
         //vymazanie prispevkov k danej udalosti
         fetch('http://localhost:8000/udalost/' + id + '?_embed=prispevok')
         .then(res => {
-        if (!res.ok) { // error coming back from server
+        if (!res.ok) {
           throw Error('could not fetch the data for that resource');
         } 
         return res.json();
