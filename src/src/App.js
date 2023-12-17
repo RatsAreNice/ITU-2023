@@ -70,7 +70,8 @@ function App() {
     background: "linear-gradient(#e66465, #9198e5)",
     backgroundSize: "cover",
     backgroundRepeat: "no-repeat",
-    height: "100vh",
+    height: "100%",
+    minHeight: "100vh",
   };
   //informacie o prihlasenom uzivatelovi su v AuthUser. ak je to null, uzivatel je odhlaseny. AuthUser.email vrati jeho email
   return (

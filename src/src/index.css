@@ -84,3 +84,48 @@ code {
     margin-right: 15px;
     display: inline-block;
   }
+
+  .udalosti-preview {
+    max-width: 400px;
+    margin: 0 auto;
+    background-color: #000;
+    opacity: 0.8;
+    border-radius: 8px;
+    align-items: center;
+  }.udalosti-preview :hover {
+    opacity: 2;
+    background: #8b0000;
+  }
+  
+  .filters{
+    padding-bottom: 10px;
+  }
+
+  .Udalost_name {
+    color: #fff;
+    font-size: 20px;
+    align-self: left;
+    padding-left: 10px;
+    padding-top: 2px;
+    text-decoration: none;
+    margin: 0;
+    justify-self: left;
+  }
+  .Udalost_lokacia {
+    color: #fff;
+    font-size: 20px;
+    padding-right: 10px;
+    padding-top: 2px;
+    text-decoration: none;
+    margin: 0;
+    justify-self: right;
+  }
+  .Udalost_zaciatok {
+    color: #fff;
+    font-size: 15px;
+    padding-right: 10px;
+    padding-top: 2px;
+    text-decoration: none;
+    margin: 0;
+    justify-self: right;
+  }
