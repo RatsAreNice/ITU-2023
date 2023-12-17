@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from 'react-router-dom'
 
-const VytvoritUdalost = ( { AuthUser } ) => {
+const VytvoritUdalost = ( { AuthUser, fetchAgain, setFetchagain } ) => {
   const [event_name, setEvent_name] = useState("")
   const [description, setDescription] = useState("")
   const [location, setLocation] = useState("")
@@ -15,6 +15,7 @@ const VytvoritUdalost = ( { AuthUser } ) => {
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {
+    console.log("submittung");
     e.preventDefault();
     const creator = AuthUser.email;
     const udalost = { event_name, description, location, max_people, start_date, start_time, end_date, end_time, creator, kategoria}
@@ -27,7 +28,8 @@ const VytvoritUdalost = ( { AuthUser } ) => {
       body: JSON.stringify(udalost)
     }).then(() => {
       setIsPending(false)
-      navigate('/')
+      setFetchagain(fetchAgain + 1);
+      navigate("/");
     })
   }
 
@@ -38,9 +40,10 @@ const VytvoritUdalost = ( { AuthUser } ) => {
   }
   
   return ( 
-    <div className="create">
-    <h2>Vytvorit udalost</h2>
+    <div className="createContainer">
+    
     <form onSubmit={handleSubmit}>
+    <div className="createu">
       <label> Nazov: </label>
       <input
         type="text"
@@ -63,7 +66,8 @@ const VytvoritUdalost = ( { AuthUser } ) => {
         value={ location }
         onChange={(e) => setLocation(e.target.value)}
       ></input>
-
+    </div>
+  <div className="create">
     <label> Kapacita: </label>
     <input
       type="number"
@@ -71,9 +75,9 @@ const VytvoritUdalost = ( { AuthUser } ) => {
       value={ max_people }
       onChange={(e) => setMax_people(e.target.value)}
     ></input>
-
     <label> Datum zaciatku: </label>
     <input type="date" min="2023-01-01" max="2030-12-31" value={ start_date } onChange={(e) => setStart_date(e.target.value)}/>
+    
     
     <label> Cas zaciatku: </label>
     <input type="time" min="00:00" max="23:59" required value={ start_time } onChange={(e) => setStart_time(e.target.value)}/>
@@ -95,7 +99,8 @@ const VytvoritUdalost = ( { AuthUser } ) => {
       <option value={"Konicky"}>Konicky</option>
       <option value={"Ine"}>Ine</option>
     </select>
-    
+    </div>
+
     { !isPending && <button> Vytvorit udalost </button>}
     { isPending && <button disabled> Pridavam... </button>}
 

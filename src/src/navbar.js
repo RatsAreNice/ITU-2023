@@ -14,9 +14,6 @@ const Navbar = () => {
             <Link className='navlink' to="/">
                 Vsetky Udalosti
             </Link>
-            <Link className='navlink' to="/vytvorit">
-                Vytvorit udalost
-            </Link>
             <Link className='navlink' to="/moje">
                 Vytvorene Udalosti
             </Link>
