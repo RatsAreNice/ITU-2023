@@ -67,7 +67,7 @@ const UpravitUdalost = ( { AuthUser } ) => {
       body: JSON.stringify(udalost)
     }).then(() => {
       setIsLoading(false)
-      navigate('/udalost/' + id)
+      navigate('/moje')
     })
   }
 
