@@ -1,3 +1,9 @@
+/*
+  Autori: Matúš Dobiáš, Oliver Nemček
+  Hlavná stránka trhoviska
+*/
+
+
 import './App.css';
 import useFetch from './useFetch';
 import { useState } from 'react';
@@ -6,10 +12,10 @@ import VytvoritPonuku from './VytvoritPonuku';
 
 function Home({ AuthUser }) {
   const [fetchAgain, setFetchagain] = useState(0);
-  const { data, isPending, error } = useFetch('http://localhost:8000/ponuka', fetchAgain);
+  const { data, isPending, error } = useFetch('http://localhost:8000/ponuka', fetchAgain); // Autorom fetchu je Oliver Nemček
   const [vytvorenie, setVytvorenie] = useState(false);
 
-  const styles = {
+  const styles = { // stylovanie, prosim nepresuvaj mi ho odtialto
     trhovisko: {
       padding: '20px',
       paddingBottom: '60px', 

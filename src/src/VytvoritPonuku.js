@@ -1,3 +1,10 @@
+/*
+Autori: Matúš Dobiáš
+Popis: Komponenta na vytvorenie ponuky
+
+*/
+
+
 import { useState } from "react";
 import { useNavigate } from 'react-router-dom'
 
@@ -9,7 +16,7 @@ const VytvoritPonuku = ( { AuthUser, fetchAgain, setFetchagain } ) => {
   const [isPending, setIsPending] = useState(false)
   const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e) => { // Asynchronna funkcia na zaslanie dat na server
     e.preventDefault();
     const user = AuthUser.email;
     const ponuka = { nazov, popis, cena, user, image }
@@ -26,16 +33,16 @@ const VytvoritPonuku = ( { AuthUser, fetchAgain, setFetchagain } ) => {
     })
   }
 
-  if (AuthUser == null){
+  if (AuthUser == null){ // Autentifikacia 
     return (
       <h1>Pre vytvorenie udalosti musite byt prihlaseny</h1>
     );
   }
   
-  return ( 
+  return ( //tajny formular, na stranke sa javy iba ako nevyplnena ponuka
     <div className="createContainer">
     
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit}> 
     <div className="create">
       <label> Nazov: </label>
       <input

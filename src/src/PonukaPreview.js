@@ -1,9 +1,14 @@
+/* 
+  Autori: Matúš Dobiáš, Oliver Nemček
+  Popis: Komponenta zobrazujúca ponuku
+*/
+
 import { Link } from "react-router-dom";
 import { useState } from "react";
 
 
 const PonukaPreview = ({ AuthUser, ponuka, fetchAgain, setFetchagain }) => {
-  const [detail, setDetail] = useState(false);
+  const [detail, setDetail] = useState(false); 
 
   let vlastnik = AuthUser && AuthUser.email === ponuka.user;
 
@@ -12,14 +17,14 @@ const PonukaPreview = ({ AuthUser, ponuka, fetchAgain, setFetchagain }) => {
   };
 
   const handleDelete = () => {
-    fetch(`http://localhost:8000/ponuka/${ponuka.id}`, {
+    fetch(`http://localhost:8000/ponuka/${ponuka.id}`, { // Autorom handleDelete je Oliver Nemček
       method: "DELETE",
     }).then(() => {
       setFetchagain(fetchAgain + 1);
     });
   };
 
-  const styles = {
+  const styles = { // stylovanie, prosim nepresuvaj mi ho odtialto
     card: {
       backgroundColor: '#fff',
       borderRadius: '8px',
@@ -62,7 +67,7 @@ const PonukaPreview = ({ AuthUser, ponuka, fetchAgain, setFetchagain }) => {
         {detail ? 'Skryt detail' : 'Detail'}
       </button>
 
-      {detail && (
+      {detail && ( // VYSUVACI DETAIL
         <div style={styles.detail}>
           <p>Popis: {ponuka.popis}</p>
           <p>Od: {ponuka.user}</p>
