@@ -121,6 +121,7 @@ code {
   .udalosti-preview {
     max-width: 400px;
     margin: 0 auto;
+    margin-bottom: 10px;
     background-color: #000;
     opacity: 0.8;
     border-radius: 8px;
@@ -142,7 +143,7 @@ code {
     padding-top: 2px;
     text-decoration: none;
     margin: 0;
-    justify-self: left;
+    float: left;
   }
   .Udalost_lokacia {
     color: #fff;
@@ -151,14 +152,23 @@ code {
     padding-top: 2px;
     text-decoration: none;
     margin: 0;
-    justify-self: right;
+    float: inline-end;
+    
   }
   .Udalost_zaciatok {
     color: #fff;
     font-size: 15px;
-    padding-right: 10px;
-    padding-top: 2px;
+    padding-left: 10px;
+    padding-top: 5px;
     text-decoration: none;
     margin: 0;
-    justify-self: right;
+    float: left;
+  }
+  .Udalost_kategoria {
+    color: #fff;
+    font-size: 15px;
+    padding-top: 5px;
+    padding-bottom: 10px;
+    text-decoration: none;
+    margin: 0;
   }

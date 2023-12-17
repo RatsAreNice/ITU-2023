@@ -14,7 +14,7 @@ const UdalostPreview = ( {AuthUser, event, fetchAgain, setFetchagain} ) => {
         <div className="udalosti-preview" key={event.id} >
             <Link to={`/udalost/${event.id}`}>
             <p className="Udalost_name">Udalost { event.event_name } </p>
-            <p className="Udalost_lokacia">{ event.location }</p>
+            <p className="Udalost_lokacia">{ event.location }</p><br /> 
             <p className="Udalost_zaciatok">O { event.start_date } cas {event.start_time}</p>
             <p className= "Udalost_kategoria">{ event.kategoria }</p>
             </Link>
