@@ -23,19 +23,44 @@ code {
   margin: 0 auto;
   display: inline;}
 
-  .create {
-    max-width: 400px;
-    margin: 0 auto;
+  .createu {
+    max-width: auto;
+    margin-left: 15%;
+    margin-right: 15%;
+    margin-top: 50px;
     text-align: center;
   }
-  .create label {
+  .createu label {
+    font-weight: bold;
     text-align: left;
     display: block;
   }
-  .create h2 {
-    font-size: 20px;
-    color: #f1356d;
-    margin-bottom: 30px;
+  .createu input, .createu textarea, .createu select {
+    width: 100%;
+    padding: 6px 10px;
+    margin: 10px 0;
+    border: 2px solid #000000;
+    background-color: transparent;
+    border-radius: 8px;
+    font-size: large;
+    line-height: 28px;
+    box-sizing: border-box;
+    display: block;
+  }
+
+  .create {
+    column-count: 2;
+    max-width: auto;
+    column-gap: 50px;
+    margin-left: 15%;
+    margin-right: 15%;
+    text-align: center;
+    
+  }
+  .create label {
+    font-weight: bold;
+    text-align: left;
+    display: block;
   }
   .create input, .create textarea, .create select {
     width: 100%;
@@ -44,13 +69,21 @@ code {
     border: 1px solid #ddd;
     box-sizing: border-box;
     display: block;
+    border-radius: 8px;
+    border: 2px solid #000000;
+    background-color: transparent;
+    border-radius: 8px;
+    font-size: large;
+    line-height: 28px;
   }
-  .create button {
-    background: #f1356d;
+  .createContainer button {
+    background: #2bbe2b;
     color: #fff;
     border: 0;
-    padding: 8px;
-    border-radius: 8px;
+    font-size: 20px;
+    padding: 13px;
+    border-radius: 50px;
+    margin-top: 20px;
     cursor: pointer;
   }
 

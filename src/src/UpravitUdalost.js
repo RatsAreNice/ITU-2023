@@ -81,13 +81,12 @@ const UpravitUdalost = ( { AuthUser } ) => {
   
   
   return ( 
-    <div className="create">
+    <div className="createContainer">
     { Error && <div>{ Error }</div> }
     { isPending && <div>Loading...</div> }
     { data && 
-    <div>
-    <h2>Upravit udalost</h2>
     <form onSubmit={handleSubmit}>
+      <div className="createu">
       <label> Nazov: </label>
       <input
         type="text"
@@ -110,7 +109,8 @@ const UpravitUdalost = ( { AuthUser } ) => {
         value={ location }
         onChange={(e) => setLocation(e.target.value)}
       ></input>
-
+    </div>
+    <div className="create">
     <label> Kapacita: </label>
     <input
       type="number"
@@ -142,12 +142,11 @@ const UpravitUdalost = ( { AuthUser } ) => {
       <option value={"Konicky"}>Konicky</option>
       <option value={"Ine"}>Ine</option>
     </select>
-
+    </div>
     { !isLoading && <button> Upravit </button>}
     { isLoading && <button disabled> Pridavam... </button>}
-
     </form>
-    </div>
+    
     }
     </div>
    );

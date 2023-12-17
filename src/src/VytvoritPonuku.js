@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from 'react-router-dom'
 
-const VytvoritPonuku = ( { AuthUser } ) => {
+const VytvoritPonuku = ( { AuthUser, fetchAgain, setFetchagain } ) => {
   const [nazov, setNazov] = useState("")
   const [popis, setPopis] = useState("")
   const [cena, setCena] = useState("")
@@ -22,7 +22,7 @@ const VytvoritPonuku = ( { AuthUser } ) => {
       body: JSON.stringify(ponuka)
     }).then(() => {
       setIsPending(false)
-      navigate('/trhovisko')
+      setFetchagain(fetchAgain + 1);
     })
   }
 
@@ -33,9 +33,10 @@ const VytvoritPonuku = ( { AuthUser } ) => {
   }
   
   return ( 
-    <div className="create">
-    <h2>Vytvorit ponuku</h2>
+    <div className="createContainer">
+    
     <form onSubmit={handleSubmit}>
+    <div className="create">
       <label> Nazov: </label>
       <input
         type="text"
@@ -62,14 +63,12 @@ const VytvoritPonuku = ( { AuthUser } ) => {
     <label> URL obrazka: </label>
       <input
         type="text"
-        required
         value={ image }
         onChange={(e) => setImage(e.target.value)}
       ></input>
-
+    </div>
     { !isPending && <button> Vytvorit ponuku </button>}
     { isPending && <button disabled> Pridavam... </button>}
-
     </form>
     </div>
    );
