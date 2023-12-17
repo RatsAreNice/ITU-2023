@@ -41,7 +41,7 @@ function App() {
   const ChangeUser = (newUser) => {
     setAuthUser(newUser)
   }
-
+  
   useEffect (() =>{
     const listen = onAuthStateChanged(auth, (user) => {
         if (user) {

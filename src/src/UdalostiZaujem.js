@@ -1,3 +1,5 @@
+//Autor: Oliver Nemček
+
 import './App.css';
 import useFetch from './useFetch';
 import { Link } from 'react-router-dom';
@@ -19,13 +21,11 @@ function UdalostiZaujem({ AuthUser }) {
     }
 
     function checkInterest(item){
-        //console.log("pozeram veci k udalosti " + item.event_name)
         item.zaujemca.forEach(checkUser)
     }
 
     function checkUser(item){
         if (item.user === AuthUser.email){
-            //console.log(item);
             filteredData.push(data.filter(events => events.id === item.udalostId)[0])
         }
     }

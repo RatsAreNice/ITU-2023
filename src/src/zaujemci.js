@@ -1,6 +1,6 @@
-const Zaujemci = ( { zaujemci } ) => {
-    //const { data, isPending, Error} = useFetch('http://localhost:8000/udalost/' + id + '?_embed=zaujemca');
+//Autor: Martin Packa
 
+const Zaujemci = ( { zaujemci } ) => {
     return (
         <div className="homeq">
           { zaujemci && 

@@ -1,3 +1,5 @@
+//Autor: Oliver Nemček
+
 import './App.css';
 import useFetch from './useFetch';
 import { useState } from 'react';

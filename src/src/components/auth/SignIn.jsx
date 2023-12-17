@@ -1,3 +1,5 @@
+//Autor: Martin Packa
+
 import { signInWithEmailAndPassword, getAuth } from "firebase/auth";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";

@@ -1,3 +1,5 @@
+//Autor: Oliver Nemček
+
 import { useState } from "react";
 import { useNavigate, useParams } from 'react-router-dom'
 import useFetch from "./useFetch";
@@ -27,7 +29,7 @@ const UpravitUdalost = ( { AuthUser } ) => {
 
         fetch('http://localhost:8000/udalost/' + id)
         .then(res => {
-        if (!res.ok) { // error coming back from server
+        if (!res.ok) {
             throw Error('could not fetch the data for that resource');
         } 
         return res.json();
@@ -47,12 +49,10 @@ const UpravitUdalost = ( { AuthUser } ) => {
         setError(null);
         })
         .catch(err => {
-        // auto catches network / connection error
         setIsPending(false);
         setError(err.message);
         })
     }, [])
-    //fetcg
 
   const handleSubmit = (e) => {
     e.preventDefault();

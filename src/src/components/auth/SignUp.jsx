@@ -1,3 +1,5 @@
+//Autor: Martin Packa
+
 import { createUserWithEmailAndPassword, getAuth } from "firebase/auth";
 import { useState } from "react";
 

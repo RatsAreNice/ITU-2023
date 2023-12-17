@@ -1,3 +1,5 @@
+//Autor: Martin Packa
+
 import { useState } from "react";
 
 const ZaujemButton = ( {id, data, AuthUser, fetchAgain, setFetchagain} ) => {

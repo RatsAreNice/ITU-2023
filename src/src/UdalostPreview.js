@@ -1,3 +1,5 @@
+//Autor: Oliver Nemček
+
 import { Link } from "react-router-dom";
 import ZaujemButton from "./ZaujemButton";
 import { useEffect, useState } from "react";
@@ -10,7 +12,6 @@ const UdalostPreview = ({ AuthUser, event, fetchAgain, setFetchagain }) => {
 
     useEffect(() => {
         setFetchagain(fetchAgain + 1);
-        console.log("runnuje setfetchagain")
     }, [fetch2]);
 
     const expand = () => {

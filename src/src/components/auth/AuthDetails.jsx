@@ -1,3 +1,5 @@
+//Autor: Martin Packa
+
 import { useState, useEffect } from "react";
 import { getAuth, onAuthStateChanged, signOut } from "firebase/auth";
 

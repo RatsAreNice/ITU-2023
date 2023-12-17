@@ -1,3 +1,5 @@
+//Autor: Oliver Nemček, https://github.com/iamshaunjp/Complete-React-Tutorial
+
 import { useState, useEffect } from 'react';
 
 const useFetch = (url, fetchAgain) => {
@@ -9,7 +11,7 @@ const useFetch = (url, fetchAgain) => {
 
       fetch(url)
       .then(res => {
-        if (!res.ok) { // error coming back from server
+        if (!res.ok) {
           throw Error('could not fetch the data for that resource');
         } 
         return res.json();
@@ -20,7 +22,6 @@ const useFetch = (url, fetchAgain) => {
         setError(null);
       })
       .catch(err => {
-        // auto catches network / connection error
         setIsPending(false);
         setError(err.message);
       })
