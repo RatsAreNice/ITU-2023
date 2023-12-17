@@ -21,7 +21,7 @@ function Home( {AuthUser} ) {
   }
 
   
-  // Style for the 'Vytvorit udalost' button
+
   const buttonStyle = {
     padding: '10px 20px',
     borderRadius: '20px',
