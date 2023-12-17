@@ -69,7 +69,7 @@ const PonukaPreview = ({ AuthUser, ponuka, fetchAgain, setFetchagain }) => {
         <div style={styles.detail}>
           <p>Popis: {ponuka.popis}</p>
           <p>Od: {ponuka.user}</p>
-          {ponuka.image && <img src={ponuka.image} alt={`Obrazok ${ponuka.nazov}`} />}
+          {ponuka.image && <img className="trh_img" src={ponuka.image} alt={`Obrazok ${ponuka.nazov}`} />}
         </div>
       )}
 
